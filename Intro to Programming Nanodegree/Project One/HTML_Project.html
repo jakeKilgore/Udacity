@@ -1,0 +1,165 @@
+<!--
+    Created by Jacob Kilgore
+    Submitted on 8/16/2018
+    Resources used: Udacity and W3schools.com
+-->
+
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <title>Project One</title>
+</head>
+
+<body>
+  <h1>Learn to Code</h1>
+  <hr>
+
+  <div>
+    <h2>The Internet</h2>
+    <p>
+      The internet is a web&#8209;like connection of computers, split between
+      <strong>servers</strong> and <strong>clients</strong>.
+      In general, servers host files while clients use
+      <strong>internet browsers</strong> to access them.
+      Internet broswers use a protocol called <strong>HTTP</strong> to request
+      files from servers and then use <strong>HTML</strong> to interpret these
+      files into a human&#8209;readable format as a <em>web page</em>.
+    </p>
+  </div>
+  <hr>
+
+  <div>
+    <h2>HTML</h2>
+    <p>
+      HTML stands for <em>Hyper Text Markup Language</em>. It is a type
+      of document containing:
+      <ul>
+        <li>Text</li>
+        <li>Markup</li>
+        <li>References</li>
+        <li>Links</li>
+      </ul>
+    </p>
+
+    <div>
+      <h3>Text</h3>
+      <p>
+        Text is simply the information conveyed with written language.
+      </p>
+    </div>
+
+    <div>
+      <h3>Markup</h3>
+      <p>
+        Markup is the grammar system used by internet browsers to group
+        information together and display it to the user. In HTML, markup is
+        written as <strong>elements</strong> which consist of a <strong>opening
+        tag</strong>, <strong>contents</strong>, and
+        <strong>closing tag</strong>.
+        <blockquote>
+          &lt;TAG&gt;contents&lt;/TAG&gt;
+        </blockquote>
+        Some tags, referred to a <em>void</em> tags, have no content and no
+        closing tag.
+        <blockquote>
+          &lt;TAG&gt;
+        </blockquote>
+        Tags may also have <strong>attributes</strong> which define information
+        about the tag.
+        <blockquote>
+          &lt;TAG&nbsp;ATTR=&quot;value&quot;&gt;contents&lt;/TAG&gt;
+        </blockquote>
+      </p>
+    </div>
+
+    <div>
+      <h3>References</h3>
+      <p>
+        HTML can make a reference to another file on the server or on the
+        internet such as a picture and the client's internet browser will
+        display it on the webpage.
+        <blockquote>
+          &lt;img&nbsp;src=&quot;url&quot;&nbsp;alt=&quot;alttext&quot;&gt;
+        </blockquote>
+        <img src="Cal.jpg" alt="My dog">
+      </p>
+    </div>
+
+    <div>
+      <h3>Links</h3>
+      <p>
+        HTML can link webpages together by placing clickable text on the web
+        page which will direct the client to another web page on the internet.
+        <blockquote>
+          &lt;a&nbsp;href=&quot;url&quot;&gt;Clickable&nbsp;Text&lt;/a&gt;
+        </blockquote>
+        <a href="https://www.udacity.com/" target="_blank">
+          This is a link to Udacity's homepage.
+        </a>
+      </p>
+    </div>
+  </div>
+  <hr>
+
+  <div>
+    <h2>Inline vs. Block</h2>
+    <p>
+      Some HTML elements are classified as being <strong>inline</strong> while
+      others are classified as <strong>block</strong>. The main difference is
+      that inline elements, such as <em>span</em> will not affect its content's
+      position on the webpage while block elements such as <em>div</em> will
+      place the element's content on a new line and create an invisible box
+      around the content where other content cannot be placed.
+      <div>
+        <blockquote>
+          This content is all on one line despite the
+          &lt;span&gt;span&lt;/span&gt; tag.
+        </blockquote>
+        This content is all on one line despite the <span>span</span> tag.
+      </div>
+      <div>
+        <blockquote>
+          This content is broken up by the &lt;div&gt;div&lt;/div&gt; tag.
+        </blockquote>
+        This content is broken up by the <div>div</div> tag.
+      </div>
+    </p>
+  </div>
+  <hr>
+
+  <div>
+    <h2>An Example</h2>
+    <p>
+      HTML, like all computer science languages, is incredibly precise,
+      avoiding the inevitable ambiguities of natural languages. It is also
+      intended to be readable by humans and thus has conventions, such as
+      indentation, that must be followed.
+    </p>
+    <p>
+      The following is a basic example of valid HTML code for a web page:
+      <blockquote>
+        &lt;!&#8209;&#8209;&nbsp;This is a comment and will be ignored by the
+        browser&nbsp;&#8209;&#8209;&gt;<br><br>
+
+        &lt;!DOCTYPE html&gt;<br>
+        &lt;html&gt;<br>
+        &lt;head&gt;<br>
+        &emsp;&lt;title&gt;Title of Web Page&lt;/title&gt;<br>
+        &lt;/head&gt;<br>
+        &lt;body&gt;<br>
+        &emsp;&lt;h1&gt;Heading&lt;/h1&gt;<br>
+        &emsp;&lt;p&gt;<br>
+        &emsp;&emsp;Paragraph of text.<br>
+        &emsp;&lt;/p&gt;<br>
+        &emsp;&lt;img&nbsp;src="Cal.jpg"&nbsp;alt="My&nbsp;Dog"&gt;<br>
+        &emsp;&lt;br&gt;<br>
+        &emsp;&lt;a&nbsp;href="https://www.w3schools.com/"&gt;<br>
+        &emsp;&emsp;A useful resource<br>
+        &emsp;&lt;/a&gt;<br>
+        &lt;/body&gt;<br>
+        &lt;/html&gt;<br>
+      </blockquote>
+    </p>
+  </div>
+</body>
+</html>

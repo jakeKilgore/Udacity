@@ -1,0 +1,345 @@
+<!--
+    Created by Jacob Kilgore
+    Submitted on 12/11/2018
+    Resources used: Udacity and W3schools.com
+-->
+
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <title>Project Two</title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="main.css">
+  <link href="https://fonts.googleapis.com/css?family=Anonymous+Pro"
+        rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans"
+        rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Ubuntu"
+        rel="stylesheet">
+
+</head>
+
+<body>
+  <!--
+      Contains links to each major section of the document.
+  -->
+  <nav class="navbar">
+    <a href="#internet">The Internet</a>
+    <a href="#html">HTML</a>
+    <a href="#inline_block">Inline vs. Block</a>
+    <a href="#example">An Example</a>
+    <a href="#" id="top">Return to Top</a>
+  </nav>
+
+  <div class="content">
+    <h1>Learn to Code</h1>
+    <hr>
+
+    <!--
+        Small section devoted to a basic overview of the internet as
+        a connection of servers and clients
+    -->
+    <details open class="section" id="internet">
+      <summary class="header">
+        <h2>The Internet</h2>
+      </summary>
+      <div class="description">
+        <p>
+          The internet is a web&#8209;like connection of computers, split
+          between <em>servers</em> and <em>clients</em>. In general,
+          servers host files while clients use <em>internet browsers</em>
+          to access them. Internet broswers use a protocol called
+          <strong>HTTP</strong> to request files from servers and then
+          use <strong>HTML</strong> to interpret these files into a
+          human&#8209;readable format called a <em>web page</em>.
+        </p>
+      </div>
+    </details>
+    <hr>
+
+
+    <!--
+      Describes HTML and the different components of the language.
+    -->
+    <details open class="section" id="html">
+      <summary class="header">
+        <h2>HTML</h2>
+      </summary>
+      <div class="description">
+        <p>
+          HTML stands for <strong>Hyper Text Markup Language</strong>.
+          It is a type of document containing:
+          <ul>
+            <li>Text</li>
+            <li>Markup</li>
+            <li>References</li>
+            <li>Links</li>
+          </ul>
+
+        <!-- Basic description of text in HTML -->
+        <div class="subsection">
+          <h3>Text</h3>
+          <p>
+            Text is simply the information conveyed with written language.
+          </p>
+        </div>
+
+        <!-- Basic overview of Markup -->
+        <div class="subsection">
+          <h3>Markup</h3>
+          <p>
+            Markup is the grammar system used by internet browsers to group
+            information together and display it to the user. In HTML, markup is
+            written as <em>elements</em> which consist of an <em>opening
+            tag</em>, <em>contents</em>, and <em>closing tag</em>.
+
+            <!-- Example code of basic tag -->
+            <details open class="example">
+              <summary class="subheader">
+                <h4>Tags</h4>
+              </summary>
+              <code>
+                &lt;<strong><span class="tag">TAG</span></strong>&gt;
+                <span class="contents">contents</span>
+                &lt;/<strong><span class="tag">TAG</span></strong>&gt;
+              </code>
+            </details>
+
+            <!-- Description and code example of void tags-->
+            Some tags, referred to a <em>void</em> tags, have no content and no
+            closing tag.
+            <details open class="example">
+              <summary class="subheader">
+                <h4>Void Tags</h4>
+              </summary>
+              <code>
+                &lt;<strong><span class="tag">TAG</span></strong>&gt;
+              </code>
+            </details>
+
+            <!-- Description and code example of tags with attributes -->
+            Tags may also have <em>attributes</em> which define
+            information about the tag.
+            <details open class="example">
+              <summary class="subheader">
+                <h4>Attributes</h4>
+              </summary>
+              <code>
+                &lt;<span class="tag"><strong>TAG</strong></span>&nbsp;
+                <span class="attr"><strong>ATTRIBUTE</strong>=</span>
+                <span class="value">&quot;<em>value</em>&quot;</span>&gt;
+                <span class="contents">contents</span>
+                &lt;/<span class="tag"><strong>TAG</strong></span>&gt;
+              </code>
+            </details>
+        </div>
+
+        <!-- Basic overview of how to reference files in HTML -->
+        <div class="subsection">
+          <h3>References</h3>
+          <p>
+            HTML can make a reference to another file on the server or on the
+            internet such as a picture and the client's internet browser will
+            display it on the webpage.
+
+            <!-- Code examples referencing an image file -->
+            <details open class="example">
+              <summary class="subheader">
+                <h4>File Reference</h4>
+              </summary>
+              <code>
+                &lt;<span class="tag"><strong>TAG</strong></span>&nbsp;
+                <span class="attr">src=</span>
+                <span class="value">&quot;url&quot;</span>&gt;
+              </code>
+            </details>
+            <details open class="example">
+              <summary class="subheader">
+                <h4>Example Image</h4>
+              </summary>
+              <code>
+                &lt;<span class="tag">img</span>&nbsp;
+                <span class="attr">src=</span>
+                <span class="value">&quot;Cal.jpg&quot;</span>&nbsp;
+                <span class="attr">alt=</span>
+                <span class="value">&quot;My dog&quot;</span>&gt;
+              </code>
+              <div class="output">
+                <img src="images/Cal.jpg" alt="My dog">
+              </div>
+            </details>
+        </div>
+
+        <!-- Basic overview of how to link to other webpages -->
+        <div class="subsection">
+          <h3>Links</h3>
+          <p>
+            HTML can link webpages together by placing clickable text on the web
+            page which will direct the client to another web page on the internet.
+
+            <!-- Example code linking to another website. -->
+            <details open class="example">
+              <summary class="subheader">
+                <h4>Links</h4>
+              </summary>
+              <code>
+                &lt;<span class="tag">a</span>&nbsp;
+                <span class="attr">href=</span>
+                <span class="value">&quot;url&quot;</span>&gt;
+                <span class="contents">Clickable&nbsp;Text</span>
+                &lt;/<span class="tag">a</span>&gt;
+              </code>
+            </details>
+            <details open class="example">
+              <summary class="subheader">
+                <h4>Example Link</h4>
+              </summary>
+              <code>
+                &lt;<span class="tag">a</span>&nbsp;
+                <span class="attr">href=</span>
+                <span class="value">&quot;https://www.udacity.com&quot;</span>&nbsp;
+                <span class="attr">target=</span>
+                <span class="value">&quot;_blank&quot;</span>&gt;
+              </code>
+              <div class="output">
+                <a href="https://www.udacity.com/" target="_blank">
+                  This is a link to Udacity's homepage.
+                </a>
+              </div>
+            </details>
+        </div>
+      </div>
+    </details>
+    <hr>
+
+    <!--
+        Basic overview of the difference between block and inline elements
+        demonstrated through span and div elements
+    -->
+    <details open class="section" id="inline_block">
+      <summary class="header">
+        <h2>Inline vs. Block</h2>
+      </summary>
+      <div class="description">
+        <p>
+          Some HTML elements are classified as being <em>inline</em> while
+          others are classified as <em>block</em>. The main difference is
+          that inline elements, such as <em>span</em> will not affect its
+          content's position on the webpage while block elements such as
+          <em>div</em> will place the element's content on a new line and
+          create an invisible box around the content where other content
+          cannot be placed.
+
+          <!--
+              Code examples of div and span elements and how they are arranged
+              on the webpage
+          -->
+          <details open class="example">
+            <summary class="subheader">
+              <h4>Span</h4>
+            </summary>
+            <code>
+              This content is all on one line despite the
+              &lt;<span class="tag">span</span>&gt;
+              <span class="contents">span</span>
+              &lt;/<span class="tag">span</span>&gt; tag.
+            </code>
+            <div class="output">
+              This content is all on one line despite the <span>span</span> tag.
+            </div>
+          </details>
+          <details open class="example">
+            <summary class="subheader">
+              <h4>Div</h4>
+            </summary>
+            <code>
+              This content is broken up by the
+              &lt;<span class="tag">div</span>&gt;
+              <span class="contents">div</span>
+              &lt;/<span class="tag">div</span>&gt; tag.
+            </code>
+            <div class="output">
+              This content is broken up by the <div>div</div> tag.
+            </div>
+          </details>
+      </div>
+    </details>
+    <hr>
+
+    <!-- Example code for a basic HTML webpage -->
+    <details open class="section" id="example">
+      <summary class="header">
+        <h2>An Example</h2>
+      </summary>
+      <div class="description">
+        <p>
+          HTML, like all computer science languages, is incredibly precise,
+          avoiding the inevitable ambiguities of natural languages. It is also
+          intended to be readable by humans and thus has conventions, such as
+          indentation, that must be followed.
+        </p>
+        <p>
+          The following is a basic example of valid HTML code for a web page:
+          <details open class="example">
+            <summary class="subheader">
+              <h4>Example Page</h4>
+            </summary>
+            <code>
+              &lt;!&#8209;&#8209;&nbsp;This is a comment and will be ignored by the
+              browser&nbsp;&#8209;&#8209;&gt;<br><br>
+
+              &lt;!DOCTYPE html&gt;<br>
+              &lt;<span class="tag">html</span>&gt;<br>
+              &lt;<span class="tag">head</span>&gt;<br>
+              &emsp;&lt;<span class="tag">title</span>&gt;
+              <span class="contents">Title of Web Page</span>
+              &lt;/<span class="tag">title</span>&gt;<br>
+              &lt;/<span class="tag">head</span>&gt;<br>
+              &lt;<span class="tag">body</span>&gt;<br>
+              &emsp;&lt;<span class="tag">h1</span>&gt;
+              <span class="contents">Heading</span>
+              &lt;/<span class="tag">h1</span>&gt;<br>
+              &emsp;&lt;<span class="tag">div</span>&nbsp;
+              <span class="attr">class=</span>
+              <span class="value">&quot;classname&quot;</span>&gt;<br>
+              &emsp;&emsp;&lt;<span class="tag">p</span>&gt;<br>
+              &emsp;&emsp;&emsp;Paragraph of text.<br>
+              &emsp;&emsp;&lt;/<span class="tag">p</span>&gt;<br>
+              &emsp;&emsp;&lt;<span class="tag">img</span>&nbsp;
+              <span class="attr">src=</span>
+              <span class="value">&quot;Cal.jpg&quot;</span>&nbsp;
+              <span class="attr">alt=</span>
+              <span class="value">&quot;My&nbsp;Dog&quot;</span>&gt;<br>
+              &emsp;&emsp;&lt;<span class="tag">p</span>&gt;<br>
+              &emsp;&emsp;&emsp;&lt;<span class="tag">a</span>&nbsp;
+              <span class="attr">href=</span>
+              <span class="value">&quot;https://www.w3schools.com/&quot;</span>&nbsp;
+              <span class="attr">target=</span>
+              <span class="value">&quot;_blank&quot;</span>&gt;<br>
+              &emsp;&emsp;&emsp;&emsp;A useful resource<br>
+              &emsp;&emsp;&emsp;&lt;/<span class="tag">a</span>&gt;<br>
+              &emsp;&emsp;&lt;/<span class="tag">p</span>&gt;<br>
+              &emsp;&lt;/<span class="tag">div</span>&gt;<br>
+              &lt;/<span class="tag">body</span>&gt;<br>
+              &lt;/<span class="tag">html</span>&gt;<br>
+            </code>
+            <div class="output">
+              <h1>Heading</h1>
+              <div class="classname">
+                <p>
+                  Paragraph of text.
+                </p>
+                <img src="images/Cal.jpg" alt="My dog">
+                <p>
+                  <a href="https://www.w3schools.com/" target="_blank">
+                    A useful resource
+                  </a>
+                </p>
+              </div>
+            </div>
+          </details>
+      </div>
+    </details>
+  </div>
+</body>
+</html>
