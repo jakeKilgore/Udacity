@@ -1,10 +1,38 @@
+# -*- coding: UTF-8
 class Query:
+    """Class for handling the levels in the quiz.
+
+    Attributes:
+        question (string): String with blanks to be filled in by guessing the answers.
+        answers (List<string>): List of answers used to fill in the blanks in the question.
+    """
+
     def __init__(self, question, answers):
+        """Constructor for the Query class.
+
+        Parameters:
+            question (string): String with blanks to be filled in by guessing the answers.
+            answers (List): List of answers used to fill in the blanks in the question.
+        """
         self.question = question
         self.answers = answers
 
     def fillBlanks(self, blank):
+        """Replace the given blank in the question with its associated answer.
+
+        Parameters:
+            blank (int): Number indicating which blank to replace.
+        """
         self.question = self.question.replace("___" + str(blank + 1) + "___", self.answers[blank])
 
     def checkAnswer(self, blank, input):
+        """Check if the user's input matches the given answer.
+
+        Parameters:
+            blank (int): Number indicating the current answer.
+            input (string): The user's input.
+
+        Return:
+            boolean: True if the input matches the answer, false otherwise.
+        """
         return input == self.answers[blank]
