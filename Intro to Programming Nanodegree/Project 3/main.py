@@ -81,7 +81,7 @@ def playRound(query, blank, guesses):
     if blank == len(query.answers) - 1:
         print textwrap.fill(query.question)
         return
-    return playRound(query, blank + 1, guesses)
+    playRound(query, blank + 1, guesses)
 
 def getInput(query, blank, guesses):
     """Obtain and return the user's guess at the current input.
@@ -90,6 +90,9 @@ def getInput(query, blank, guesses):
         query (list): The question string and a list of the answers.
         blank (int): The current blank to be filled.
         guesses (int): The number of guesses the user has remaining.
+
+    Return:
+        str: User's input.
     """
 
     if guesses > 1:
