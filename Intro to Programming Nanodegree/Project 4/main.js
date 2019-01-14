@@ -1,8 +1,8 @@
-function display(movie) {
+function display(e, movie) {
   if (!e) var e = window.event;
   e.cancelBubble = true;
-  if(e.stopPropogation) e.stopPropogation();
-  if(movie == null) {
+  if (e.stopPropogation) e.stopPropogation();
+  if (movie == null) {
     document.getElementById("footer").style.display = "none";
     document.getElementById("content").style.paddingBottom = "10px";
   }

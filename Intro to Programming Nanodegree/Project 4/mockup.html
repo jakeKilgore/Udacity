@@ -14,25 +14,25 @@
 </head>
 
 <body>
-  <header class="header">
+  <header id="header">
     Header
   </header>
-  <div id="content" onclick=display(null)>
-    <div class="movies">
-      <div id="movie1" class="movie" onclick=display("movie")>
+  <div id="content" onclick="display(event, null)">
+    <div id="movies">
+      <div class="movie" onclick="display(event, 'movie')">
         <img src="Cal.jpg">
       </div>
-      <div id="movie2" class="movie" onclick=display("movie")>
+      <div class="movie" onclick="display(event, 'movie')">
         <img src="Cal.jpg">
       </div>
-      <div id="movie3" class="movie" onclick=display("movie")>
+      <div class="movie" onclick="display(event, 'movie')">
         <img src="Cal.jpg">
       </div>
     </div>
   </div>
   <footer id="footer">
-    <div class="movie_info">
-      <div class="trailer">
+    <div id="movie_info">
+      <div id="trailer">
         <iframe width="560" height="315" src="https://www.youtube.com/embed/E7N7v4qy8zM"
         frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope;
         picture-in-picture" allowfullscreen></iframe>
