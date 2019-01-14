@@ -5,6 +5,7 @@
 }
 
 body {
+  font-family: 'Ubuntu', sans-serif;
   margin: 0;
 }
 
@@ -14,9 +15,35 @@ body {
   height: 40px;
   background-color: black;
   color: white;
+  text-align: center;
+  line-height: 40px;
 }
 
-.content {
+#content {
   padding: 10px;
-  padding-top: 40px;
+  padding-top: 50px;
+  padding-bottom: 10px;
+}
+
+.movies {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.movie {
+  margin: 1%;
+}
+
+#footer {
+  background-color: black;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: auto;
+  display: none;
+}
+
+.trailer {
+  margin: 1%;
 }

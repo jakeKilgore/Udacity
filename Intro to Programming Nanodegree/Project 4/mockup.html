@@ -4,22 +4,40 @@
   <title>Project Four</title>
   <meta charset="utf-8">
   <link rel="stylesheet" href="mockup.css">
+  <link href="https://fonts.googleapis.com/css?family=Anonymous+Pro"
+        rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans"
+        rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Ubuntu"
+        rel="stylesheet">
+  <script src="main.js"></script>
 </head>
 
 <body>
   <header class="header">
     Header
   </header>
-  <div class="content">
-    Content
+  <div id="content" onclick=display(null)>
     <div class="movies">
-      Movies
-      <div class="movie">
+      <div id="movie1" class="movie" onclick=display("movie")>
+        <img src="Cal.jpg">
+      </div>
+      <div id="movie2" class="movie" onclick=display("movie")>
+        <img src="Cal.jpg">
+      </div>
+      <div id="movie3" class="movie" onclick=display("movie")>
+        <img src="Cal.jpg">
+      </div>
+    </div>
+  </div>
+  <footer id="footer">
+    <div class="movie_info">
+      <div class="trailer">
         <iframe width="560" height="315" src="https://www.youtube.com/embed/E7N7v4qy8zM"
         frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope;
         picture-in-picture" allowfullscreen></iframe>
       </div>
     </div>
-  </div>
+  </footer>
 </body>
 </html>

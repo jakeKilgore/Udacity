@@ -1,0 +1,2 @@
+https://www.quirksmode.org/js/events_order.html
+Used as a reference for allowing elements inside of elements to both have onclick events.
