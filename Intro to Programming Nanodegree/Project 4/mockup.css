@@ -41,17 +41,26 @@ body {
   bottom: 0;
   width: 100%;
   height: auto;
-  display: flex;
-  justify-content: center;
-  border-width: 5px 0 0 0;
+  border-width: 3px 0 0 0;
   border-style: solid;
+  visibility: hidden;
+  padding: 1% 15%;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 #trailer {
-  margin: 1%;
+  width: 560px;
+  height: 315px;
+  margin: 0 1%;
+}
+
+#movie_info {
+  flex: 1 0 40%;
+  margin: 0 1%;
 }
 
 #description {
-  margin: 1%;
-  flex-basis: 100px;
+  overflow: auto;
+  max-height: 200px;
 }
