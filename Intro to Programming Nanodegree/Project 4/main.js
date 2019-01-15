@@ -1,13 +1,29 @@
-function display(e, movie) {
-  if (!e) var e = window.event;
-  e.cancelBubble = true;
-  if (e.stopPropogation) e.stopPropogation();
-  if (movie == null) {
-    document.getElementById("footer").style.display = "none";
-    document.getElementById("content").style.paddingBottom = "10px";
+$(document).ready(function() {
+  $("#content").on("click", {movie: null}, display);
+  $(".movie").on("click", {movie: "movie"}, display);
+  $("#footer").hide();
+});
+
+function display(event) {
+  event.cancelBubble = true;
+  event.stopPropagation();
+  if (event.data.movie == null) {
+    $("#footer").slideUp(400, setContentHeight(null));
   }
   else {
-    document.getElementById("footer").style.display = "flex";
-    document.getElementById("content").style.paddingBottom = "335px";
+    $("#footer").slideDown(400, setContentHeight("#footer"));
+    $("html, body").animate({
+      scrollTop: $(this).offset().top
+    });
   }
+}
+
+function setContentHeight(element) {
+  var height = 0;
+  if(element != null) {
+    height = $(element).outerHeight();
+  }
+  $("#content").animate({
+    marginBottom: height
+  });
 }
