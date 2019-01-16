@@ -12,42 +12,58 @@
 </head>
 
 <body>
-  <header id="header">
+  <!-- Title bar for website -->
+  <header class="header">
     <h1>Movie Trailers</h1>
   </header>
-  <div id="content">
-    <div id="movies">
-      <div class="movie">
+
+  <!-- Main page content -->
+  <div class="content">
+    <!-- Flexible display of clickable movie posters -->
+    <div class="movies">
+      <!-- TODO:
+        Movies should be added dynamically by python script.
+        Movies should carry data of trailer, title, description, etc.
+      -->
+      <div class="poster">
         <img src="https://images-na.ssl-images-amazon.com/images/I/51BuadQiXoL.jpg" alt="Placeholder Picture">
       </div>
-      <div class="movie">
+      <div class="poster">
         <img src="https://cdn.cinematerial.com/p/297x/ecnje3nh/true-grit-movie-poster-md.jpg" alt="Placeholder Picture">
       </div>
-      <div class="movie">
+      <div class="poster">
         <img src="https://images-na.ssl-images-amazon.com/images/I/51BuadQiXoL.jpg" alt="Placeholder Picture">
       </div>
-      <div class="movie">
+      <div class="poster">
         <img src="https://images-na.ssl-images-amazon.com/images/I/51BuadQiXoL.jpg" alt="Placeholder Picture">
       </div>
-      <div class="movie">
+      <div class="poster">
         <img src="https://images-na.ssl-images-amazon.com/images/I/51BuadQiXoL.jpg" alt="Placeholder Picture">
       </div>
-      <div class="movie">
+      <div class="poster">
         <img src="https://images-na.ssl-images-amazon.com/images/I/51BuadQiXoL.jpg" alt="Placeholder Picture">
       </div>
-      <div class="movie">
+      <div class="poster">
         <img src="https://images-na.ssl-images-amazon.com/images/I/51BuadQiXoL.jpg" alt="Placeholder Picture">
       </div>
-      <div class="movie">
+      <div class="poster">
         <img src="https://images-na.ssl-images-amazon.com/images/I/51BuadQiXoL.jpg" alt="Placeholder Picture">
       </div>
     </div>
   </div>
-  <footer id="footer">
-    <iframe id="trailer" src=""></iframe>
-    <div id="movie_info">
-      <h1 id="title">O Brother, Where Art Thou?</h1>
-      <p id="description">
+
+  <!-- Bottom section of webpage. Pulls up when poster is clicked on with movie info -->
+  <!-- TODO:
+    Movie information should be added dynamically by javascript.
+    Possibly add reviews or other movie info.
+  -->
+  <footer class="footer">
+    <!-- Movie trailer -->
+    <iframe class="trailer" src=""></iframe>
+    <!-- Movie title, description, etc. -->
+    <div class="movie-info">
+      <h1 class="title">O Brother, Where Art Thou?</h1>
+      <p class="description">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
         tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
         veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
@@ -111,6 +127,8 @@
       <p>
     </div>
   </footer>
+
+  <!-- Javascript files. -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="main.js"></script>
 </body>

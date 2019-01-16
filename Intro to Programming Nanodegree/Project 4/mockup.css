@@ -5,18 +5,15 @@
 }
 
 body {
-  font-family: 'Ubuntu', sans-serif;
+  font-family: "Ubuntu", sans-serif;
   margin: 0;
   background-color: #EBEBEB;
   color: #262626
 }
 
-img {
-  width: 100%;
-  height: auto;
-}
 
-#header {
+/* Header */
+.header {
   position: fixed;
   width: 100%;
   height: 40px;
@@ -26,24 +23,33 @@ img {
   font-size: 10px;
 }
 
-#content {
+
+/* Main content */
+.content {
   padding: 10px;
   padding-top: 50px;
   padding-bottom: 10px;
 }
 
-#movies {
+.movies {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
 }
 
-.movie {
+.poster {
   max-width: 50%;
   margin: 2%;
 }
 
-#footer {
+img {
+  width: 100%;
+  height: auto;
+}
+
+
+/* Footer */
+.footer {
   background-color: #262626;
   color: #EBEBEB;
   position: fixed;
@@ -59,24 +65,24 @@ img {
   flex-wrap: wrap;
 }
 
-#trailer {
+.trailer {
   width: 560px;
   height: 315px;
   margin: 0 1%;
   border: none;
 }
 
-#movie_info {
+.movie-info {
   flex: 1 0 40%;
   margin: 0 1%;
   height: 315px;
 }
 
-#title {
+.title {
   margin: 0;
 }
 
-#description {
+.description {
   margin: 10px 0 0 0;
   overflow: auto;
   max-height: 268px;
