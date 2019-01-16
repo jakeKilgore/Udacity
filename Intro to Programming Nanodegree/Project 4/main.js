@@ -7,31 +7,30 @@ $(document).ready(function() {
   function display(event) {
     event.cancelBubble = true;
     event.stopPropagation();
-    if (event.data.movie == null) {
-      $("#footer").slideUp(400, setContentHeight(null));
+    if (event.data.movie === null) {
+      $("#footer").slideUp(setContentHeight(null));
     }
     else {
-      $("#footer").slideDown(400, setContentHeight("#footer"));
+      $("#footer").slideDown(setContentHeight("#footer"));
       $("html, body").animate({
         scrollTop: scrollHelper(this)
       });
     }
   }
 
-  function scrollHelper(element) {
-    //window.alert($(element).next().attr('id'));
-    var currentOffset = $(element).offset().top;
-    var windowOffset = $("#footer").innerHeight() - $(window).height();
-    return currentOffset + windowOffset + $(element).innerHeight();
-  }
-
   function setContentHeight(element) {
     var height = 0;
-    if(element != null) {
+    if(element !== null) {
       height = $(element).outerHeight();
     }
     $("#content").animate({
       marginBottom: height
     });
+  }
+
+  function scrollHelper(element) {
+    var currentOffset = $(element).offset().top;
+    var windowOffset = $("#footer").innerHeight() - $(window).height();
+    return currentOffset + windowOffset + $(element).innerHeight();
   }
 });

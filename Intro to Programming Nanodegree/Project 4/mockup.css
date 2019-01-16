@@ -7,14 +7,16 @@
 body {
   font-family: 'Ubuntu', sans-serif;
   margin: 0;
+  background-color: #EBEBEB;
+  color: #262626
 }
 
 #header {
   position: fixed;
   width: 100%;
   height: 40px;
-  background-color: black;
-  color: white;
+  background-color: #262626;
+  color: #EBEBEB;
   text-align: center;
   line-height: 40px;
 }
@@ -23,6 +25,7 @@ body {
   padding: 10px;
   padding-top: 50px;
   padding-bottom: 10px;
+  overflow: hidden;
 }
 
 #movies {
@@ -36,7 +39,7 @@ body {
 }
 
 #footer {
-  background-color: white;
+  background-color: #EBEBEB;
   position: fixed;
   bottom: 0;
   width: 100%;
