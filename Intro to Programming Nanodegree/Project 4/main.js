@@ -9,8 +9,10 @@ $(document).ready(function() {
     event.stopPropagation();
     if (event.data.movie === null) {
       $("#footer").slideUp(setContentHeight(null));
+      $("#trailer").attr("src", "");
     }
     else {
+      $("#trailer").attr("src", "https://www.youtube.com/embed/E7N7v4qy8zM?controls=0&rel=0&autoplay=1");
       $("#footer").slideDown(setContentHeight("#footer"));
       $("html, body").animate({
         scrollTop: scrollHelper(this)

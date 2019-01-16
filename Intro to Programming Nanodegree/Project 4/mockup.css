@@ -55,14 +55,21 @@ body {
   width: 560px;
   height: 315px;
   margin: 0 1%;
+  border: none;
 }
 
 #movie_info {
   flex: 1 0 40%;
   margin: 0 1%;
+  height: 315px;
+}
+
+#title {
+  margin: 0;
 }
 
 #description {
+  margin: 10px 0 0 0;
   overflow: auto;
-  max-height: 200px;
+  max-height: 268px;
 }
