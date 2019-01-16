@@ -11,6 +11,11 @@ body {
   color: #262626
 }
 
+img {
+  width: 100%;
+  height: auto;
+}
+
 #header {
   position: fixed;
   width: 100%;
@@ -18,7 +23,7 @@ body {
   background-color: #262626;
   color: #EBEBEB;
   text-align: center;
-  line-height: 40px;
+  font-size: 10px;
 }
 
 #content {
@@ -34,15 +39,18 @@ body {
 }
 
 .movie {
-  margin: 1%;
+  max-width: 50%;
+  margin: 2%;
 }
 
 #footer {
-  background-color: #EBEBEB;
+  background-color: #262626;
+  color: #EBEBEB;
   position: fixed;
   bottom: 0;
   width: 100%;
   height: auto;
+  max-height: 50%;
   border-width: 3px 0 0 0;
   border-style: solid;
   visibility: hidden;
@@ -72,4 +80,5 @@ body {
   margin: 10px 0 0 0;
   overflow: auto;
   max-height: 268px;
+  font-family: "Open Sans", sans-serif;
 }

@@ -4,6 +4,9 @@ $(document).ready(function() {
   $("#footer").hide();
   $("#footer").css("visibility", "visible");
 
+  /**
+
+  */
   function display(event) {
     event.cancelBubble = true;
     event.stopPropagation();
@@ -20,6 +23,9 @@ $(document).ready(function() {
     }
   }
 
+  /**
+
+  */
   function setContentHeight(element) {
     var height = 0;
     if(element !== null) {
@@ -30,6 +36,9 @@ $(document).ready(function() {
     });
   }
 
+  /**
+
+  */
   function scrollHelper(element) {
     var currentOffset = $(element).offset().top;
     var windowOffset = $("#footer").innerHeight() - $(window).height();
