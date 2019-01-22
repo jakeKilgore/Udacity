@@ -1,2 +1,15 @@
 https://www.quirksmode.org/js/events_order.html
 Used as a reference for allowing elements inside of elements to both have onclick events.
+
+https://www.w3schools.com/howto/howto_css_aspect_ratio.asp
+Used as a reference for setting aspect ratios of images.
+
+Movie Posters:
+O Brother, Where Art Thou?
+By Source, Fair use, https://en.wikipedia.org/w/index.php?curid=10532208
+
+True Grit (2010):
+By Source, Fair use, https://en.wikipedia.org/w/index.php?curid=29019078
+
+Alien:
+By Source, Fair use, https://en.wikipedia.org/w/index.php?curid=398031

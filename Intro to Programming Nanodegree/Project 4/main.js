@@ -1,6 +1,6 @@
 $(document).ready(function() {
   $(".content").on("click", {movie: null}, display);
-  $(".poster").on("click", {movie: "movie"}, display);
+  $(".movie").on("click", {movie: "movie"}, display);
   $(".footer").hide();
   $(".footer").css("visibility", "visible");
 
