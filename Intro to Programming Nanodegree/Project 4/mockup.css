@@ -21,6 +21,7 @@ body {
   color: #EBEBEB;
   text-align: center;
   font-size: 10px;
+  z-index: 1;
 }
 
 
@@ -39,16 +40,18 @@ body {
 
 .movie {
   margin: 2%;
-  flex: 0 0 25%;
+  width: 20%;
+  padding-top: 30.37%;
+  /* Movie poster aspect ratio is roughly 27 by 41 */
+  position: relative;
 }
 
 .poster {
+  height: 100%;
   width: 100%;
-}
-
-img {
-  width: 100%;
-  height: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
 
