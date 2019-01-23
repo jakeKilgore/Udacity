@@ -45,8 +45,8 @@ $(document).ready(function() {
   */
   function scrollHelper(element) {
     var currentOffset = $(element).offset().top;
-    var windowOffset = $(".footer").innerHeight() - $(window).height();
-    return currentOffset + windowOffset + $(element).innerHeight();
+    var windowOffset = $(".footer").outerHeight() - $(window).height();
+    return currentOffset + windowOffset + $(element).outerHeight();
   }
 
   /**

@@ -5,31 +5,29 @@
 }
 
 body {
-  font-family: "Ubuntu", sans-serif;
   margin: 0;
   background-color: #EBEBEB;
-  color: #262626
+  color: #262626;
+  font-family: "Ubuntu", sans-serif;
 }
 
 
 /* Header */
 .header {
   position: fixed;
-  width: 100%;
+  z-index: 1;
   height: 40px;
+  width: 100%;
   background-color: #262626;
   color: #EBEBEB;
   text-align: center;
   font-size: 10px;
-  z-index: 1;
 }
 
 
 /* Main content */
 .content {
-  padding: 10px;
-  padding-top: 50px;
-  padding-bottom: 10px;
+  padding: 50px 10px 10px;
 }
 
 .movies {
@@ -40,17 +38,17 @@ body {
 }
 
 .movie {
-  margin: 2%;
+  position: relative;
+  /* Movie poster aspect ratio is roughly 27 by 41 */
   width: 20%;
   padding-bottom: 30.37%;
-  /* Movie poster aspect ratio is roughly 27 by 41 */
-  position: relative;
+  margin: 2%;
 }
 
 .poster {
+  position: absolute;
   height: 100%;
   width: 100%;
-  position: absolute;
   top: 0;
   left: 0;
 }
@@ -58,24 +56,23 @@ body {
 
 /* Footer */
 .footer {
-  background-color: #262626;
-  color: #EBEBEB;
   position: fixed;
-  bottom: 0;
-  width: 100%;
-  height: auto;
-  max-height: 50%;
-  border-width: 3px 0 0 0;
-  border-style: solid;
-  visibility: hidden;
-  padding: 1% 5%;
   display: flex;
   flex-wrap: wrap;
+  max-height: 50%;
+  width: 100%;
+  bottom: 0;
+  border-width: 3px 0 0 0;
+  border-style: solid;
+  padding: 1% 5%;
+  background-color: #262626;
+  color: #EBEBEB;
+  visibility: hidden;
 }
 
 .trailer-flex-sizing {
-  flex: 1 1 40%;
   margin: 0 1%;
+  flex: 1 1 40%;
 }
 
 .trailer-container {
@@ -85,19 +82,19 @@ body {
 }
 
 .trailer {
+  position: absolute;
   height: 100%;
   width: 100%;
   margin: 0 1%;
   top: 0;
   left: 0;
-  position: absolute;
   border: none;
 }
 
 .movie-info {
-  flex: 1 1 40%;
-  margin: 0 1%;
   max-height: 20%;
+  margin: 0 1%;
+  flex: 1 1 40%;
 }
 
 .title {
@@ -106,6 +103,6 @@ body {
 
 .description {
   margin: 10px 0 0 0;
-  overflow: auto;
   font-family: "Open Sans", sans-serif;
+  overflow: auto;
 }
