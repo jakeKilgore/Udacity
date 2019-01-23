@@ -1,6 +1,6 @@
 $(document).ready(function() {
   $("html, body").on("click", {movie: null}, display);
-  $(".movie").on("click", {movie: "movie"}, display);
+  $(".poster").on("click", {movie: "movie"}, display);
   $(".footer").hide();
   $(".footer").css("visibility", "visible");
 
@@ -15,8 +15,9 @@ $(document).ready(function() {
       $(".trailer").attr("src", "");
     }
     else {
-      $(".trailer").attr("src", "https://www.youtube.com/embed/E7N7v4qy8zM?controls=0&rel=0&autoplay=1");
-
+      $(".trailer").attr("src", $(this).data("trailer"));
+      $(".title").html($(this).data("title"));
+      $(".description").html($(this).data("description"));
       $(".footer").slideDown(setContentHeight(".footer"));
       $("html, body").animate({
         scrollTop: scrollHelper(this)
@@ -57,4 +58,9 @@ $(document).ready(function() {
     height -= $(".footer").innerHeight() - $(".footer").height();
     $(".description").css("maxHeight", height);
   }
+
+
+  $(window).resize(function() {
+    setDescriptionHeight();
+  });
 });
