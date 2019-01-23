@@ -15,9 +15,7 @@ $(document).ready(function() {
       $(".trailer").attr("src", "");
     }
     else {
-      $(".trailer").attr("src", $(this).data("trailer"));
-      $(".title").html($(this).data("title"));
-      $(".description").html($(this).data("description"));
+      setMovieDetails(this);
       $(".footer").slideDown(setContentHeight(".footer"));
       $("html, body").animate({
         scrollTop: scrollHelper(this)
@@ -48,6 +46,16 @@ $(document).ready(function() {
     var currentOffset = $(element).offset().top;
     var windowOffset = $(".footer").outerHeight() - $(window).height();
     return currentOffset + windowOffset + $(element).outerHeight();
+  }
+
+  /**
+  @description Set the trailer, title, and description from the poster data.
+  @param {Element} element - Selected movie to take data from.
+  */
+  function setMovieDetails(element) {
+    $(".trailer").attr("src", $(element).data("trailer"));
+    $(".title").html($(element).data("title"));
+    $(".description").html($(element).data("description"));
   }
 
   /**
