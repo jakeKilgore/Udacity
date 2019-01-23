@@ -16,10 +16,12 @@ $(document).ready(function() {
     }
     else {
       $(".trailer").attr("src", "https://www.youtube.com/embed/E7N7v4qy8zM?controls=0&rel=0&autoplay=1");
+
       $(".footer").slideDown(setContentHeight(".footer"));
       $("html, body").animate({
         scrollTop: scrollHelper(this)
       });
+      setDescriptionHeight();
     }
   }
 
@@ -45,5 +47,14 @@ $(document).ready(function() {
     var currentOffset = $(element).offset().top;
     var windowOffset = $(".footer").innerHeight() - $(window).height();
     return currentOffset + windowOffset + $(element).innerHeight();
+  }
+
+  /**
+  @description Set the height of the movie description to fit in the footer.
+  */
+  function setDescriptionHeight() {
+    var height = $(".trailer").outerHeight() - $(".title").outerHeight();
+    height -= $(".footer").innerHeight() - $(".footer").height();
+    $(".description").css("maxHeight", height);
   }
 });

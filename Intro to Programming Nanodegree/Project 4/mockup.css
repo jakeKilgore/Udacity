@@ -68,22 +68,36 @@ body {
   border-width: 3px 0 0 0;
   border-style: solid;
   visibility: hidden;
-  padding: 1% 15%;
+  padding: 1% 5%;
   display: flex;
   flex-wrap: wrap;
 }
 
-.trailer {
-  width: 560px;
-  height: 315px;
+.trailer-flex-sizing {
+  flex: 1 1 40%;
   margin: 0 1%;
+}
+
+.trailer-container {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%;
+}
+
+.trailer {
+  height: 100%;
+  width: 100%;
+  margin: 0 1%;
+  top: 0;
+  left: 0;
+  position: absolute;
   border: none;
 }
 
 .movie-info {
-  flex: 1 0 40%;
+  flex: 1 1 40%;
   margin: 0 1%;
-  height: 315px;
+  max-height: 20%;
 }
 
 .title {
@@ -93,6 +107,5 @@ body {
 .description {
   margin: 10px 0 0 0;
   overflow: auto;
-  max-height: 268px;
   font-family: "Open Sans", sans-serif;
 }
