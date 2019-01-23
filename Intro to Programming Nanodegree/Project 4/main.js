@@ -1,5 +1,5 @@
 $(document).ready(function() {
-  $(".content").on("click", {movie: null}, display);
+  $("html, body").on("click", {movie: null}, display);
   $(".movie").on("click", {movie: "movie"}, display);
   $(".footer").hide();
   $(".footer").css("visibility", "visible");

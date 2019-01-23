@@ -42,7 +42,7 @@ body {
 .movie {
   margin: 2%;
   width: 20%;
-  padding-top: 30.37%;
+  padding-bottom: 30.37%;
   /* Movie poster aspect ratio is roughly 27 by 41 */
   position: relative;
 }
