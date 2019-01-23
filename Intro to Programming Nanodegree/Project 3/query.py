@@ -3,16 +3,20 @@ class Query:
     """Class for handling the levels in the quiz.
 
     Attributes:
-        question (str): String with blanks to be filled in by guessing the answers.
-        answers (List[str]): List of answers used to fill in the blanks in the question.
+        question (str): String with blanks to be filled in by guessing the
+                        answers.
+        answers (List[str]): List of answers used to fill in the blanks in the
+                             question.
     """
 
     def __init__(self, question, answers):
         """Constructor for the Query class.
 
         Parameters:
-            question (str): String with blanks to be filled in by guessing the answers.
-            answers (List[str]): List of answers used to fill in the blanks in the question.
+            question (str): String with blanks to be filled in by guessing the
+                            answers.
+            answers (List[str]): List of answers used to fill in the blanks in
+                                 the question.
         """
         self.question = question
         self.answers = answers
@@ -23,7 +27,8 @@ class Query:
         Parameters:
             blank (int): Number indicating which blank to replace.
         """
-        self.question = self.question.replace("___" + str(blank + 1) + "___", self.answers[blank])
+        self.question = self.question.replace(
+            "___" + str(blank + 1) + "___", self.answers[blank])
 
     def checkAnswer(self, blank, input):
         """Check if the user's input matches the given answer.
