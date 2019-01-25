@@ -41,8 +41,15 @@ body {
   position: relative;
   /* Movie poster aspect ratio is roughly 27 by 41 */
   width: 20%;
-  padding-bottom: 30.37%;
+  height: auto;
   margin: 2%;
+}
+
+.poster-container {
+  position: relative;
+  width: 100%;
+  padding-bottom: 151.85%;
+
 }
 
 .poster {
@@ -51,6 +58,13 @@ body {
   width: 100%;
   top: 0;
   left: 0;
+}
+
+.poster-title {
+  text-align: center;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  font-size: 20px;
 }
 
 
