@@ -76,7 +76,7 @@ def get_query():
 def play_round(query, blank, guesses):
     """Play one round of the game.
 
-    Arguments:
+    Parameters:
         query (Query): The question string and a list of the answers.
         blank (int): The current blank to be filled.
         guesses (int): The number of guesses the user has remaining.
@@ -105,7 +105,7 @@ def play_round(query, blank, guesses):
 def get_input(query, blank, guesses):
     """Obtain and return the user's guess at the current input.
 
-    Arguments:
+    Parameters:
         query (Query): The question string and a list of the answers.
         blank (int): The current blank to be filled.
         guesses (int): The number of guesses the user has remaining.
@@ -128,6 +128,7 @@ def get_input(query, blank, guesses):
 
 def check_answer(query, blank, user_input):
     """Return whether the input matches the correct answer."""
+
     correct = query.check_answer(blank, user_input)
     if correct:
         print "Correct!"
@@ -138,6 +139,7 @@ def check_answer(query, blank, user_input):
 
 def play_again():
     """Return whether the user wants to play again."""
+
     user_input = raw_input("Play again? (y/n): ").lower()
     if user_input == 'y':
         return True

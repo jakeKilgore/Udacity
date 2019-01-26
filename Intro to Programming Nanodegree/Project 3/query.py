@@ -18,6 +18,7 @@ class Query:
             answers (List[str]): List of answers used to fill in the blanks in
                                  the question.
         """
+
         self.question = question
         self.answers = answers
 
@@ -27,6 +28,7 @@ class Query:
         Parameters:
             blank (int): Number indicating which blank to replace.
         """
+
         self.question = self.question.replace(
             "___" + str(blank + 1) + "___", self.answers[blank])
 
@@ -40,4 +42,5 @@ class Query:
         Return:
             boolean: True if the input matches the answer, false otherwise.
         """
+
         return user_input == self.answers[blank]
