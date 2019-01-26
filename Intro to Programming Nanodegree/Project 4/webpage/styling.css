@@ -1,122 +1,122 @@
-*{
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 body {
-  margin: 0;
-  background-color: #EBEBEB;
-  color: #262626;
-  font-family: "Ubuntu", sans-serif;
+    margin: 0;
+    background-color: #EBEBEB;
+    color: #262626;
+    font-family: "Ubuntu", sans-serif;
 }
 
 
 /* Header */
 .header {
-  position: fixed;
-  z-index: 1;
-  height: 40px;
-  width: 100%;
-  background-color: #262626;
-  color: #EBEBEB;
-  text-align: center;
-  font-size: 10px;
+    position: fixed;
+    z-index: 1;
+    height: 40px;
+    width: 100%;
+    background-color: #262626;
+    color: #EBEBEB;
+    text-align: center;
+    font-size: 10px;
 }
 
 
 /* Main content */
 .content {
-  padding: 50px 10px 10px;
+    padding: 50px 10px 10px;
 }
 
 .movies {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin: 0 5%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0 5%;
 }
 
 .movie {
-  position: relative;
-  width: 20%;
-  height: auto;
-  margin: 2%;
+    position: relative;
+    width: 20%;
+    height: auto;
+    margin: 2%;
 }
 
 .poster-container {
-  position: relative;
-  /* Movie poster aspect ratio is roughly 27 by 41 */
-  width: 100%;
-  padding-bottom: 151.85%;
+    position: relative;
+    /* Movie poster aspect ratio is roughly 27 by 41 */
+    width: 100%;
+    padding-bottom: 151.85%;
 
 }
 
 .poster {
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  top: 0;
-  left: 0;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
 }
 
 .poster-title {
-  text-align: center;
-  text-overflow: ellipsis;
-  overflow: hidden;
-  font-size: 20px;
+    text-align: center;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    font-size: 20px;
 }
 
 
 /* Footer */
 .footer {
-  position: fixed;
-  display: flex;
-  flex-wrap: wrap;
-  max-height: 50%;
-  width: 100%;
-  bottom: 0;
-  border-width: 3px 0 0 0;
-  border-style: solid;
-  padding: 1% 5%;
-  background-color: #262626;
-  color: #EBEBEB;
-  visibility: hidden;
+    position: fixed;
+    display: flex;
+    flex-wrap: wrap;
+    max-height: 50%;
+    width: 100%;
+    bottom: 0;
+    border-width: 3px 0 0 0;
+    border-style: solid;
+    padding: 1% 5%;
+    background-color: #262626;
+    color: #EBEBEB;
+    visibility: hidden;
 }
 
 .trailer-flex-sizing {
-  margin: 0 1%;
-  flex: 1 1 40%;
+    margin: 0 1%;
+    flex: 1 1 40%;
 }
 
 .trailer-container {
-  position: relative;
-  width: 100%;
-  padding-bottom: 56.25%;
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%;
 }
 
 .trailer {
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  margin: 0 1%;
-  top: 0;
-  left: 0;
-  border: none;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    margin: 0 1%;
+    top: 0;
+    left: 0;
+    border: none;
 }
 
 .movie-info {
-  max-height: 20%;
-  margin: 0 1%;
-  flex: 1 1 40%;
+    max-height: 20%;
+    margin: 0 1%;
+    flex: 1 1 40%;
 }
 
 .title {
-  margin: 0;
+    margin: 0;
 }
 
 .description {
-  margin: 10px 0 0 0;
-  font-family: "Open Sans", sans-serif;
-  overflow: auto;
+    margin: 10px 0 0 0;
+    font-family: "Open Sans", sans-serif;
+    overflow: auto;
 }

@@ -1,51 +1,52 @@
 <!DOCTYPE html>
 <html lang="en-us">
 <head>
-  <title>Project Four</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="styling.css">
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans"
-        rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Ubuntu"
-        rel="stylesheet">
+    <title>Project Four</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styling.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans"
+          rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu"
+          rel="stylesheet">
 </head>
 
 <body>
-  <!-- Title bar for website -->
-  <header class="header">
+<!-- Title bar for website -->
+<header class="header">
     <h1>Movie Trailers</h1>
-  </header>
+</header>
 
-  <!-- Main page content -->
-  <div class="content">
+<!-- Main page content -->
+<div class="content">
     <!-- Flexible display of clickable movie posters -->
     <div class="movies">
-      <!-- Movies are added by the python script -->
-      {movies}
+        <!-- Movies are added by the python script -->
+        {movies}
     </div>
-  </div>
+</div>
 
-  <!-- Bottom section of webpage. Pulls up when poster is clicked on with movie info -->
-  <!-- TODO:
-    Possibly add reviews or other movie info.
-  -->
-  <footer class="footer">
+<!-- Bottom section of webpage. Pulls up when poster is clicked on with movie info -->
+<!-- TODO:
+  Possibly add reviews or other movie info.
+-->
+<footer class="footer">
     <!-- Movie trailer -->
     <div class="trailer-flex-sizing">
-      <div class="trailer-container">
-        <iframe class="trailer"></iframe>
-      </div>
+        <div class="trailer-container">
+            <iframe class="trailer"></iframe>
+        </div>
     </div>
     <!-- Movie title, description, etc. -->
     <div class="movie-info">
-      <h2 class="title"></h2>
-      <p class="description"><p>
+        <h2 class="title"></h2>
+        <p class="description">
+        <p>
     </div>
-  </footer>
+</footer>
 
-  <!-- Javascript files. -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="scripts.js"></script>
+<!-- Javascript files. -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="scripts.js"></script>
 </body>
 </html>
