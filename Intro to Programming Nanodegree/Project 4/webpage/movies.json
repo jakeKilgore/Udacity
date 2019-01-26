@@ -5,18 +5,34 @@
     "trailer": "https://www.youtube.com/embed/E7N7v4qy8zM?controls=0&rel=0&autoplay=1",
     "poster": "https://upload.wikimedia.org/wikipedia/en/5/5b/O_brother_where_art_thou_ver1.jpg"
   },
-
+  {
+    "title": "Interstellar",
+    "description": "PLACEHOLDER",
+    "trailer": "",
+    "poster": "https://upload.wikimedia.org/wikipedia/en/b/bc/Interstellar_film_poster.jpg"
+  },
   {
     "title": "True Grit (2010)",
     "description": "PLACEHOLDER",
     "trailer": "",
     "poster": "https://upload.wikimedia.org/wikipedia/en/c/ce/True_Grit_Poster.jpg"
   },
-
   {
     "title": "Alien",
     "description": "PLACEHOLDER",
     "trailer": "",
     "poster": "https://upload.wikimedia.org/wikipedia/en/c/c3/Alien_movie_poster.jpg"
+  },
+  {
+    "title": "Star Wars",
+    "description": "PLACEHOLDER",
+    "trailer": "",
+    "poster": "https://upload.wikimedia.org/wikipedia/en/8/87/StarWarsMoviePoster1977.jpg"
+  },
+  {
+    "title": "The Big Lebowski",
+    "description": "PLACEHOLDER",
+    "trailer": "",
+    "poster": "https://upload.wikimedia.org/wikipedia/en/3/35/Biglebowskiposter.jpg"
   }
 ]

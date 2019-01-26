@@ -13,3 +13,12 @@ Movie Posters:
 
     Alien:
         By Source, Fair use, https://en.wikipedia.org/w/index.php?curid=398031
+
+    Interstellar:
+        By Source, Fair use, https://en.wikipedia.org/w/index.php?curid=42681446
+
+    Star Wars:
+        By Source, Fair use, https://en.wikipedia.org/w/index.php?curid=13169387
+
+    The Big Lebowski:
+        By Distributed by Gramercy Pictures, https://en.wikipedia.org/w/index.php?curid=11361994
