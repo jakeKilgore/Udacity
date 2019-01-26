@@ -3,6 +3,7 @@ _movie_html_template = '''
             <div class="poster-container">
                 <img class="poster" 
                     src="{poster_url}"
+                    alt="Movie poster for {title}"
                     data-trailer="{trailer_url}"
                     data-title="{title}"
                     data-description="{description}"

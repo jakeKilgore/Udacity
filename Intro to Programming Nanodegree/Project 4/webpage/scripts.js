@@ -13,7 +13,7 @@ $(document).ready(function () {
     $footer.hide().css("visibility", "visible");
 
     /**
-     @description Toggle the existance of the footer when a poster is clicked on.
+     @description Toggle the existence of the footer when a poster is clicked on.
      */
     function display(event) {
         event.cancelBubble = true;

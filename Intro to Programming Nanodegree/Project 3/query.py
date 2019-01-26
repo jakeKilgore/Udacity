@@ -21,7 +21,7 @@ class Query:
         self.question = question
         self.answers = answers
 
-    def fillBlanks(self, blank):
+    def fill_blanks(self, blank):
         """Replace the given blank in the question with its associated answer.
 
         Parameters:
@@ -30,14 +30,14 @@ class Query:
         self.question = self.question.replace(
             "___" + str(blank + 1) + "___", self.answers[blank])
 
-    def checkAnswer(self, blank, input):
+    def check_answer(self, blank, user_input):
         """Check if the user's input matches the given answer.
 
         Parameters:
             blank (int): Number indicating the current answer.
-            input (str): The user's input.
+            user_input (str): The user's input.
 
         Return:
             boolean: True if the input matches the answer, false otherwise.
         """
-        return input == self.answers[blank]
+        return user_input == self.answers[blank]

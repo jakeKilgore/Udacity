@@ -42,7 +42,7 @@ __valid_queries = {
 }
 
 
-def playGame():
+def play_game():
     """Play the game.
 
     Play rounds at the player's difficulty level until they decide to quit.
@@ -50,14 +50,14 @@ def playGame():
 
     guesses = 5
 
-    query = getQuery()
+    query = get_query()
     assert query is not None, "Invalid query."
-    playRound(query, 0, guesses)
-    if playAgain():
-        playGame()
+    play_round(query, 0, guesses)
+    if play_again():
+        play_game()
 
 
-def getQuery():
+def get_query():
     """Get the user's desired difficulty level.
 
     Return:
@@ -70,10 +70,10 @@ def getQuery():
         query = __valid_queries[difficulty]
         return Query(query.question, query.answers)
         # New query is created for replayability reasons.
-    return getQuery()
+    return get_query()
 
 
-def playRound(query, blank, guesses):
+def play_round(query, blank, guesses):
     """Play one round of the game.
 
     Arguments:
@@ -82,31 +82,31 @@ def playRound(query, blank, guesses):
         guesses (int): The number of guesses the user has remaining.
     """
 
-    assert blank >= 0 and blank < len(query.answers), "Out of question range."
+    assert 0 <= blank < len(query.answers), "Out of question range."
     assert guesses > 0, "Remaining guesses must be positive."
 
     correct = False
     while guesses > 0:
-        input = getInput(query, blank, guesses)
-        correct = checkAnswer(query, blank, input)
+        user_input = get_input(query, blank, guesses)
+        correct = check_answer(query, blank, user_input)
         if correct:
             break
         guesses -= 1
     if not correct:
         print "You are out of guesses!"
         return
-    query.fillBlanks(blank)
+    query.fill_blanks(blank)
     if blank == len(query.answers) - 1:
         print textwrap.fill(query.question)
         return
-    playRound(query, blank + 1, guesses)
+    play_round(query, blank + 1, guesses)
 
 
-def getInput(query, blank, guesses):
+def get_input(query, blank, guesses):
     """Obtain and return the user's guess at the current input.
 
     Arguments:
-        query (list): The question string and a list of the answers.
+        query (Query): The question string and a list of the answers.
         blank (int): The current blank to be filled.
         guesses (int): The number of guesses the user has remaining.
 
@@ -126,9 +126,9 @@ def getInput(query, blank, guesses):
         "What should replace ___" + str(blank + 1) + "___? ").lower()
 
 
-def checkAnswer(query, blank, input):
+def check_answer(query, blank, user_input):
     """Return whether the input matches the correct answer."""
-    correct = query.checkAnswer(blank, input)
+    correct = query.check_answer(blank, user_input)
     if correct:
         print "Correct!"
     else:
@@ -136,14 +136,14 @@ def checkAnswer(query, blank, input):
     return correct
 
 
-def playAgain():
+def play_again():
     """Return whether the user wants to play again."""
-    input = raw_input("Play again? (y/n): ").lower()
-    if input == 'y':
+    user_input = raw_input("Play again? (y/n): ").lower()
+    if user_input == 'y':
         return True
-    if input == 'n':
+    if user_input == 'n':
         return False
-    return playAgain()
+    return play_again()
 
 
-playGame()
+play_game()
