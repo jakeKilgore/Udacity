@@ -10,7 +10,7 @@ def main():
 
 
 def get_movies_list():
-    with open('movies.json') as data:
+    with open('webpage\movies.json') as data:
         movie_data = json.load(data)
     movies = []
     for movie in movie_data:
