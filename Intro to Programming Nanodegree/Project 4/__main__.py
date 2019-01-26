@@ -1,6 +1,7 @@
 import json
 import os
 import webbrowser
+
 import webpage.media as media
 
 
@@ -16,7 +17,7 @@ def _get_movies_list():
         movie_data = json.load(data)
     movies = []
     for movie in movie_data:
-        movies.append(media.Movie(movie['title'], movie['description'], movie['trailer'], movie['poster']))
+        movies.append(media.Movie(movie['title'], movie['description'], movie['trailer_code'], movie['poster_url']))
     return movies
 
 

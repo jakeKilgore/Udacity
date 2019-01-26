@@ -1,38 +1,38 @@
 [
   {
     "title": "O Brother, Where Art Thou?",
-    "description": "PLACEHOLDER",
-    "trailer": "https://www.youtube.com/embed/E7N7v4qy8zM?controls=0&rel=0&autoplay=1",
-    "poster": "https://upload.wikimedia.org/wikipedia/en/5/5b/O_brother_where_art_thou_ver1.jpg"
+    "description": "Three convicts run from the law across rural Mississippi in search of one of the men's supposed treasure.",
+    "trailer_code": "eW9Xo2HtlJI",
+    "poster_url": "https://upload.wikimedia.org/wikipedia/en/5/5b/O_brother_where_art_thou_ver1.jpg"
   },
   {
     "title": "Interstellar",
-    "description": "PLACEHOLDER",
-    "trailer": "",
-    "poster": "https://upload.wikimedia.org/wikipedia/en/b/bc/Interstellar_film_poster.jpg"
+    "description": "A team of astronauts leave Earth to find a new home for humanity.",
+    "trailer_code": "zSWdZVtXT7E",
+    "poster_url": "https://upload.wikimedia.org/wikipedia/en/b/bc/Interstellar_film_poster.jpg"
   },
   {
     "title": "True Grit (2010)",
-    "description": "PLACEHOLDER",
-    "trailer": "",
-    "poster": "https://upload.wikimedia.org/wikipedia/en/c/ce/True_Grit_Poster.jpg"
+    "description": "A teenage girl hires a grizzled lawman to hunt down the outlaw who killed her father.",
+    "trailer_code": "qIJ4OJ1wH3o",
+    "poster_url": "https://upload.wikimedia.org/wikipedia/en/c/ce/True_Grit_Poster.jpg"
   },
   {
     "title": "Alien",
-    "description": "PLACEHOLDER",
-    "trailer": "",
-    "poster": "https://upload.wikimedia.org/wikipedia/en/c/c3/Alien_movie_poster.jpg"
+    "description": "The crew of a commercial space tug accidentally stumble across a dangerous alien species.",
+    "trailer_code": "LjLamj-b0I8",
+    "poster_url": "https://upload.wikimedia.org/wikipedia/en/c/c3/Alien_movie_poster.jpg"
   },
   {
-    "title": "Star Wars",
-    "description": "PLACEHOLDER",
-    "trailer": "",
-    "poster": "https://upload.wikimedia.org/wikipedia/en/8/87/StarWarsMoviePoster1977.jpg"
+    "title": "Star Wars: A New Hope",
+    "description": "A young man comes across a droid containing an important message and leaves his farm to fight a galaxy-spanning empire.",
+    "trailer_code": "HGKikqxxSdA",
+    "poster_url": "https://upload.wikimedia.org/wikipedia/en/8/87/StarWarsMoviePoster1977.jpg"
   },
   {
     "title": "The Big Lebowski",
-    "description": "PLACEHOLDER",
-    "trailer": "",
-    "poster": "https://upload.wikimedia.org/wikipedia/en/3/35/Biglebowskiposter.jpg"
+    "description": "A lazy, middle-aged bowler gets wrapped up in events far beyond his control.",
+    "trailer_code": "ngV0RBhGZmE",
+    "poster_url": "https://upload.wikimedia.org/wikipedia/en/3/35/Biglebowskiposter.jpg"
   }
 ]
