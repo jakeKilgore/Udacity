@@ -1,16 +1,18 @@
 import json
+import os
 import webbrowser
 import webpage.media as media
 
 
 def main():
-    movies = get_movies_list()
-    webpage = generate_webpage(movies)
-    open_webpage(webpage)
+    movies = _get_movies_list()
+    webpage = _generate_webpage(movies)
+    _open_webpage(webpage)
 
 
-def get_movies_list():
-    with open('webpage\movies.json') as data:
+def _get_movies_list():
+    json_file = os.path.join('webpage', 'movies.json')
+    with open(json_file, 'r') as data:
         movie_data = json.load(data)
     movies = []
     for movie in movie_data:
@@ -18,25 +20,27 @@ def get_movies_list():
     return movies
 
 
-def generate_webpage(movies):
-    movies_html = generate_movies_html(movies)
-    return fill_template(movies_html)
+def _generate_webpage(movies):
+    movies_html = _generate_movies_html(movies)
+    return _fill_template(movies_html)
 
 
-def generate_movies_html(movies):
+def _generate_movies_html(movies):
     movies_html = [movie.html() for movie in movies]
     return ''.join(movies_html)
 
 
-def fill_template(movies_html):
-    with open("webpage\mockup.html", "r") as template:
+def _fill_template(movies_html):
+    html_file = os.path.join('webpage', 'mockup.html')
+    with open(html_file, 'r') as template:
         return template.read().format(movies=movies_html)
 
 
-def open_webpage(webpage):
-    with open("webpage\output.html", "w") as output:
+def _open_webpage(webpage):
+    output_file = os.path.join('webpage', 'output.html')
+    with open(output_file, "w") as output:
         output.write(webpage)
-    webbrowser.open("webpage\output.html")
+    webbrowser.open(output_file)
 
 
 if __name__ == "__main__":
