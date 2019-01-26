@@ -1,4 +1,4 @@
-poster_html = '''
+_movie_html_template = '''
         <div class="movie">
             <div class="poster-container">
                 <img class="poster" 
@@ -10,7 +10,8 @@ poster_html = '''
             </div>
             <h2 class="poster-title">{title}</h2>
         </div>
-            '''
+'''
+
 
 class Movie:
     def __init__(self, title, description, trailer, poster):
@@ -20,5 +21,5 @@ class Movie:
         self.poster = poster
 
     def html(self):
-        return poster_html.format(poster_url=self.poster, trailer_url=self.trailer,
-                                  title=self.title, description=self.description)
+        return _movie_html_template.format(poster_url=self.poster, trailer_url=self.trailer,
+                                           title=self.title, description=self.description)

@@ -1,6 +1,6 @@
 import json
 import webbrowser
-import classes.media as media
+import webpage.media as media
 
 
 def main():
@@ -29,14 +29,14 @@ def generate_movies_html(movies):
 
 
 def fill_template(movies_html):
-    with open("mockup.html", "r") as template:
+    with open("webpage\mockup.html", "r") as template:
         return template.read().format(movies=movies_html)
 
 
 def open_webpage(webpage):
-    with open("output.html", "w") as output:
+    with open("webpage\output.html", "w") as output:
         output.write(webpage)
-    webbrowser.open("output.html")
+    webbrowser.open("webpage\output.html")
 
 
 if __name__ == "__main__":
