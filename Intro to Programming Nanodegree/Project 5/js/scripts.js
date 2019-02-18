@@ -1,6 +1,7 @@
 $(document).ready(function() {
     // JQuery selectors
    const
+       $gameBoard = $('.game-board'),
        $deck = $('.deck'),
        $refresh = $('.refresh');
 
@@ -20,8 +21,13 @@ $(document).ready(function() {
        $deck.empty();
        createBoard();
    });
+   
+   $(window).resize(function() {
+       resizeGameBoard();
+   });
 
    createBoard();
+   resizeGameBoard();
 
     /**
      * @description Populate the game board with cards.
@@ -31,7 +37,7 @@ $(document).ready(function() {
        icons.forEach(function(icon) {
            let card = '' +
                '<div class="card">' +
-               '<div class = \"icon fa fa-' + icon + '\">' +
+               '<div class=\"icon fa fa-' + icon + '\">' +
                '</div>' +
                '</div>';
            cards.push(card);
@@ -57,5 +63,11 @@ $(document).ready(function() {
             cards[currentIndex] = cards[newIndex];
             cards[newIndex] = temp;
        }
+   }
+   
+   function resizeGameBoard() {
+       let size = .8 * Math.min($(window).innerHeight(), $(window).innerWidth());
+       $gameBoard.css('width', size);
+       $gameBoard.css('padding-bottom', size);
    }
 });
