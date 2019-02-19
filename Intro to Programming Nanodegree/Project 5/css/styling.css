@@ -66,10 +66,43 @@ h1 {
     margin-bottom: 5%;
     width: 20%;
     padding-bottom: 20%;
-    background: #2e3d49;
+    background: transparent;
     box-shadow: 5px 2px 20px 0 rgba(46, 61, 73, 0.5);
     border-radius: 8px;
     cursor: pointer;
+    transition: transform 2s;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+    
+    -webkit-transition: transform 2s;
+    -webkit-transform-style: preserve-3d;
+    -webkit-perspective: 1000px;
+}
+
+.open {
+	transform: rotateY(180);
+	-webkit-transform: rotateY(180);
+}
+
+.card-front {
+	position: absolute;
+	height: 100%;
+	width: 100%;
+    background: #2e3d49;
+    backface-visibility: hidden;
+    border-radius: inherit;
+}
+
+.card-back {
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	background: #02b3e4;
+	backface-visibility: hidden;
+	transform: rotateY(180);
+	border-radius: inherit;
+	
+	-webkit-transform: rotateY(180);
 }
 
 .icon {

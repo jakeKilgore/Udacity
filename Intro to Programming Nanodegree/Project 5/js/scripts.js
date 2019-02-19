@@ -3,7 +3,11 @@ $(document).ready(function() {
    const
        $gameBoard = $('.game-board'),
        $deck = $('.deck'),
+       $moves = $('.moves'),
        $refresh = $('.refresh');
+    
+   let
+       moves = 0;
 
    // Game pieces
    const icons = [
@@ -22,6 +26,10 @@ $(document).ready(function() {
        createBoard();
    });
    
+   $deck.on('click', '.card', function() {
+       makeMove(this);
+   });
+   
    $(window).resize(function() {
        resizeGameBoard();
    });
@@ -37,7 +45,11 @@ $(document).ready(function() {
        icons.forEach(function(icon) {
            let card = '' +
                '<div class="card">' +
+               '<div class="card-front">' +
                '<div class=\"icon fa fa-' + icon + '\">' +
+               '</div>' +
+               '</div>' +
+               '<div class="card-back">' +
                '</div>' +
                '</div>';
            cards.push(card);
@@ -69,5 +81,19 @@ $(document).ready(function() {
        let size = .8 * Math.min($(window).innerHeight(), $(window).innerWidth());
        $gameBoard.css('width', size);
        $gameBoard.css('padding-bottom', size);
+   }
+   
+   function makeMove(card) {
+       if ($(card).hasClass('open')) {
+           return;
+       }
+       $(card).addClass('open');
+       $(card).css('transform', 'rotateY(180)');
+       moves++;
+       updateScore();
+   }
+   
+   function updateScore() {
+       $moves.html(moves + ' Moves');
    }
 });
