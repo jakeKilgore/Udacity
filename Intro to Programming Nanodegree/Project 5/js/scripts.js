@@ -88,12 +88,35 @@ $(document).ready(function() {
            return;
        }
        $(card).addClass('open');
-       $(card).css('transform', 'rotateY(180)');
        moves++;
        updateScore();
+       let match = checkMatch();
+       alert(match);
+       finishMove(match);
    }
    
    function updateScore() {
        $moves.html(moves + ' Moves');
+   }
+   
+   function checkMatch() {
+       let cards = $('.open');
+       if (cards.length < 2) {
+           return false;
+       }
+       return $(cards[0]).html() === $(cards[1]).html();
+   }
+   
+   function finishMove(match) {
+       let cards = $('.open')
+       if (cards.length < 2) {
+           return;
+       }
+       if (match) {
+           cards.addClass('match');
+       }
+       setTimeout(function() {
+           cards.removeClass('open');
+       }, 800);
    }
 });
