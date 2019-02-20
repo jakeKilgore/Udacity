@@ -91,7 +91,6 @@ $(document).ready(function() {
        moves++;
        updateScore();
        let match = checkMatch();
-       alert(match);
        finishMove(match);
    }
    
