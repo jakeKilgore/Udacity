@@ -22,8 +22,9 @@ $(document).ready(function() {
    ];
 
    $refresh.on('click', function() {
-       $deck.empty();
-       createBoard();
+       refreshCards();
+       moves = 0;
+       updateScore();
    });
    
    $deck.on('click', '.card', function() {
@@ -116,6 +117,15 @@ $(document).ready(function() {
        }
        setTimeout(function() {
            cards.removeClass('open');
+       }, 800);
+   }
+   
+   function refreshCards() {
+       $('.open').removeClass('open');
+       $('.match').removeClass('match');
+       setTimeout(function() {
+           $deck.empty();
+           createBoard();
        }, 800);
    }
 });
