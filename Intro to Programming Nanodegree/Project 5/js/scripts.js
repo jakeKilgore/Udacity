@@ -64,7 +64,7 @@ $(document).ready(function() {
     }
 
     /**
-     * Shuffle the deck of cards
+     * @description Shuffle the deck of cards.
      * @param {Array} cards - Array of cards to be shuffled.
      * @return {Array} cards
      */
@@ -77,7 +77,10 @@ $(document).ready(function() {
              cards[newIndex] = temp;
         }
     }
-   
+
+    /**
+     * @description Set the size of the board and font based on whether the screen is larger in width or height.
+     */
     function resizeGameBoard() {
         let windowWidth = $(window).innerWidth();
         let windowHeight = $(window).innerHeight();
@@ -93,7 +96,11 @@ $(document).ready(function() {
         }
         $('.icon').css('font-size', fontSize);
     }
-   
+
+    /**
+     * @description Flip a card and check if the player has made a match.
+     * @param {Element} card - The card the player has clicked.
+     */
     function makeMove(card) {
         let $card = $(card);
         if ($card.hasClass('open') || $card.hasClass('match')) {
@@ -105,11 +112,18 @@ $(document).ready(function() {
         let match = checkMatch();
         finishMove(match);
     }
-   
+
+    /**
+     * @description Update the move counter.
+     */
     function updateScore() {
         $moves.html(moves + ' Moves');
     }
-   
+
+    /**
+     * @description Check if the flipped cards match.
+     * @returns {boolean} True if the cards match, false otherwise.
+     */
     function checkMatch() {
         let cards = $('.open');
         if (cards.length < 2) {
@@ -117,7 +131,11 @@ $(document).ready(function() {
         }
         return $(cards[0]).html() === $(cards[1]).html();
     }
-   
+
+    /**
+     * @description Update the classes of the cards.
+     * @param {boolean} match - Whether the cards match.
+     */
     function finishMove(match) {
         let cards = $('.open')
         if (cards.length < 2) {
@@ -130,7 +148,10 @@ $(document).ready(function() {
             cards.removeClass('open');
         }, 800);
     }
-   
+
+    /**
+     * @description Reshuffle the cards.
+     */
     function refreshCards() {
         $('.open').removeClass('open');
         $('.match').removeClass('match');
