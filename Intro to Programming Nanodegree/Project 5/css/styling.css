@@ -21,6 +21,7 @@ h1 {
     font-weight: 100;
 }
 
+/* Score panel */
 .stats {
     min-width: 20%;
     padding: 5px;
@@ -39,7 +40,10 @@ h1 {
     cursor: pointer;
 }
 
+/* Game board */
 .game-board {
+    /* display: inline-table helps with rounding error on game-board size in chrome causing ugly white lines */
+    display: inline-table;
     position: relative;
     width: 33%;
     padding-bottom: 33%;
@@ -48,6 +52,7 @@ h1 {
     border-radius: 10px;
 }
 
+/* Deck of cards */
 .deck {
     position: absolute;
     display: flex;
@@ -60,6 +65,7 @@ h1 {
     height: 100%;
 }
 
+/* Card styling */
 .card {
     position: relative;
     margin-right: 5%;
@@ -74,10 +80,12 @@ h1 {
     transform-style: preserve-3d;
 }
 
+/* Currently flipped cards */
 .open {
 	transform: rotateY(-180deg);
 }
 
+/* Matched cards that stay flipped */
 .match {
 	transform: rotateY(-180deg);
 	background: #02ccba;
