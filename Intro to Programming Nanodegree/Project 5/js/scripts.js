@@ -79,13 +79,24 @@ $(document).ready(function() {
    }
    
    function resizeGameBoard() {
-       let size = .8 * Math.min($(window).innerHeight(), $(window).innerWidth());
-       $gameBoard.css('width', size);
-       $gameBoard.css('padding-bottom', size);
+       let windowWidth = $(window).innerWidth();
+       let windowHeight = $(window).innerHeight();
+       let boardSize = .8 * Math.min(windowWidth, windowHeight);
+       $gameBoard.css('width', boardSize);
+       $gameBoard.css('padding-bottom', boardSize);
+
+       let fontSize;
+       if (windowWidth < windowHeight) {
+           fontSize = '1.5vh';
+       } else {
+           fontSize = '1.5vw';
+       }
+       $('.icon').css('font-size', fontSize);
    }
    
    function makeMove(card) {
-       if ($(card).hasClass('open')) {
+       let $card = $(card);
+       if ($card.hasClass('open') || $card.hasClass('match')) {
            return;
        }
        $(card).addClass('open');
