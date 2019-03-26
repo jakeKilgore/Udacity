@@ -1,8 +1,8 @@
 $(document).ready(function() {
     // JQuery selectors
     const
-        $gameBoard = $('.game-board'),
-        $deck = $('.deck'),
+        $gameBoard = $('.game-deck'),
+        $deck = $('.cards'),
         $moves = $('.moves'),
         $refresh = $('.refresh');
     
@@ -39,7 +39,7 @@ $(document).ready(function() {
     resizeGameBoard();
 
     /**
-     * @description Populate the game board with cards.
+     * @description Populate the game deck with cards.
      */
     function createBoard() {
         let cards = [];
@@ -64,7 +64,7 @@ $(document).ready(function() {
     }
 
     /**
-     * @description Shuffle the deck of cards.
+     * @description Shuffle the cards of cards.
      * @param {Array} cards - Array of cards to be shuffled.
      * @return {Array} cards
      */
@@ -79,7 +79,7 @@ $(document).ready(function() {
     }
 
     /**
-     * @description Set the size of the board and font based on whether the screen is larger in width or height.
+     * @description Set the size of the deck and font based on whether the screen is larger in width or height.
      */
     function resizeGameBoard() {
         let windowWidth = $(window).innerWidth();

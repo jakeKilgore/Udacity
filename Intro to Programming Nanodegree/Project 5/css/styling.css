@@ -22,7 +22,7 @@ h1 {
 }
 
 /* Score panel */
-.stats {
+.score {
     min-width: 20%;
     padding: 5px;
 }
@@ -40,9 +40,9 @@ h1 {
     cursor: pointer;
 }
 
-/* Game board */
+/* Game deck */
 .game-board {
-    /* display: inline-table helps with rounding error on game-board size in chrome causing ugly white lines */
+    /* display: inline-table helps with rounding error on game-deck size in chrome causing ugly white lines */
     display: inline-table;
     position: relative;
     width: 33%;
