@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <title>Project Four</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styling.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans"
+          rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu"
+          rel="stylesheet">
+</head>
+
+<body>
+<!-- Title bar for website -->
+<header class="header">
+    <h1>Movie Trailers</h1>
+</header>
+
+<!-- Main page content -->
+<div class="content">
+    <!-- Flexible display of clickable movie posters -->
+    <div class="movies">
+        <!-- Movies are added by the python script -->
+        
+        <div class="movie">
+            <div class="poster-container">
+                <img class="poster" 
+                    src="https://upload.wikimedia.org/wikipedia/en/5/5b/O_brother_where_art_thou_ver1.jpg"
+                    alt="Movie poster for O Brother, Where Art Thou?"
+                    data-trailer="https://www.youtube.com/embed/eW9Xo2HtlJI?controls=0&rel=0&autoplay=1"
+                    data-title="O Brother, Where Art Thou?"
+                    data-description="Three convicts run from the law across rural Mississippi in search of one of the men's supposed treasure."
+                />
+            </div>
+            <h2 class="poster-title">O Brother, Where Art Thou?</h2>
+        </div>
+
+        <div class="movie">
+            <div class="poster-container">
+                <img class="poster" 
+                    src="https://upload.wikimedia.org/wikipedia/en/b/bc/Interstellar_film_poster.jpg"
+                    alt="Movie poster for Interstellar"
+                    data-trailer="https://www.youtube.com/embed/zSWdZVtXT7E?controls=0&rel=0&autoplay=1"
+                    data-title="Interstellar"
+                    data-description="A team of astronauts leave Earth to find a new home for humanity."
+                />
+            </div>
+            <h2 class="poster-title">Interstellar</h2>
+        </div>
+
+        <div class="movie">
+            <div class="poster-container">
+                <img class="poster" 
+                    src="https://upload.wikimedia.org/wikipedia/en/c/ce/True_Grit_Poster.jpg"
+                    alt="Movie poster for True Grit (2010)"
+                    data-trailer="https://www.youtube.com/embed/qIJ4OJ1wH3o?controls=0&rel=0&autoplay=1"
+                    data-title="True Grit (2010)"
+                    data-description="A teenage girl hires a grizzled lawman to hunt down the outlaw who killed her father."
+                />
+            </div>
+            <h2 class="poster-title">True Grit (2010)</h2>
+        </div>
+
+        <div class="movie">
+            <div class="poster-container">
+                <img class="poster" 
+                    src="https://upload.wikimedia.org/wikipedia/en/c/c3/Alien_movie_poster.jpg"
+                    alt="Movie poster for Alien"
+                    data-trailer="https://www.youtube.com/embed/LjLamj-b0I8?controls=0&rel=0&autoplay=1"
+                    data-title="Alien"
+                    data-description="The crew of a commercial space tug accidentally stumble across a dangerous alien species."
+                />
+            </div>
+            <h2 class="poster-title">Alien</h2>
+        </div>
+
+        <div class="movie">
+            <div class="poster-container">
+                <img class="poster" 
+                    src="https://upload.wikimedia.org/wikipedia/en/8/87/StarWarsMoviePoster1977.jpg"
+                    alt="Movie poster for Star Wars: A New Hope"
+                    data-trailer="https://www.youtube.com/embed/HGKikqxxSdA?controls=0&rel=0&autoplay=1"
+                    data-title="Star Wars: A New Hope"
+                    data-description="A young man comes across a droid containing an important message and leaves his farm to fight a galaxy-spanning empire."
+                />
+            </div>
+            <h2 class="poster-title">Star Wars: A New Hope</h2>
+        </div>
+
+        <div class="movie">
+            <div class="poster-container">
+                <img class="poster" 
+                    src="https://upload.wikimedia.org/wikipedia/en/3/35/Biglebowskiposter.jpg"
+                    alt="Movie poster for The Big Lebowski"
+                    data-trailer="https://www.youtube.com/embed/ngV0RBhGZmE?controls=0&rel=0&autoplay=1"
+                    data-title="The Big Lebowski"
+                    data-description="A lazy, middle-aged bowler gets wrapped up in events far beyond his control."
+                />
+            </div>
+            <h2 class="poster-title">The Big Lebowski</h2>
+        </div>
+
+    </div>
+</div>
+
+<!-- Bottom section of webpage. Pulls up when poster is clicked on with movie info -->
+<!-- TODO:
+  Possibly add reviews or other movie info.
+-->
+<footer class="footer">
+    <!-- Movie trailer -->
+    <div class="trailer-flex-sizing">
+        <div class="trailer-container">
+            <iframe class="trailer"></iframe>
+        </div>
+    </div>
+    <!-- Movie title, description, etc. -->
+    <div class="movie-info">
+        <h2 class="title"></h2>
+        <p class="description">
+        <p>
+    </div>
+</footer>
+
+<!-- Javascript files. -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="scripts.js"></script>
+</body>
+</html>
