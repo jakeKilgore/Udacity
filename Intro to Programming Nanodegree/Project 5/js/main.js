@@ -2,12 +2,12 @@ import Deck from './deck.js';
 import Game from './game.js';
 
 $(document).ready(function() {
+    const animationDelay = 800;
+
     let
         deck = new Deck($('.deck')),
         game = new Game(deck, animationDelay),
         victory = false;
-
-    const animationDelay = 800;
 
     /**
      * @description When the refresh button is pressed, startTimer a new game.
