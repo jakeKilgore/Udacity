@@ -17,6 +17,7 @@ export default class Score {
         this.maxFlipped = 0;
         this.$element = score;
 
+        this.fillStars();
         this.update();
     }
 
@@ -63,9 +64,13 @@ export default class Score {
             this.maxFlipped = this.timesFlipped[card];
         }
 
-        // Start with five stars, allow two flips for each card with no penalty, then subtract a star for every
-        // additional flip
-        this.stars = 7 - this.maxFlipped;
+        this.stars = 6 - this.maxFlipped;
+    }
+
+    fillStars() {
+        for(let i = 1; i <= 5; i++) {
+            this.$element.find('#star' + i).css('color', 'gold');
+        }
     }
 
     /**
@@ -73,5 +78,8 @@ export default class Score {
      */
     update() {
         this.$element.find('.moves').html(this.moves + " Moves");
+        for (let i = 5; i > this.stars && i > 0; i--) {
+            this.$element.find('#star' + i).css('color', '#262626');
+        }
     }
 }
