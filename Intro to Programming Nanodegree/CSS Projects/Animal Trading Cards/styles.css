@@ -1,1 +1,39 @@
-/* add your CSS here */
+/* The entire card */
+.card {
+    border: 1px solid lightgray;
+    padding: 0 10px 10px;
+    width: 300px;
+    box-shadow: 5px 5px 4px lightgray;
+}
+
+
+/* The picture of the animal */
+img {
+    width: 300px;
+    height: 200px;
+}
+
+
+/* Information about the animal */
+.info {
+    border: 1px solid lightgray;
+    padding: 0 10px 10px;
+    margin-top: 10px;
+    font-size: 10pt;
+}
+
+.fact {
+    font-style: italic;
+}
+
+ul {
+    padding-left: 0;
+}
+
+li {
+    list-style: none;
+}
+
+.label {
+    font-weight: bold;
+}
