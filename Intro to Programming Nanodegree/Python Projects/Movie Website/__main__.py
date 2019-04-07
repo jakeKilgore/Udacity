@@ -2,9 +2,8 @@
 import json
 import os
 import webbrowser
-
-import webpage.media as media
-import webpage.page as page
+from webpage import media
+from webpage import page
 
 
 def main():

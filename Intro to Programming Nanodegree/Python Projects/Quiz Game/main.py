@@ -64,7 +64,7 @@ def get_query():
         query (Query): The question string and a list of the answers.
     """
 
-    difficulty = raw_input(
+    difficulty = input(
         "Enter your difficulty level (easy/medium/hard): ").lower()
     if difficulty in __valid_queries:
         query = __valid_queries[difficulty]
@@ -93,11 +93,11 @@ def play_round(query, blank, guesses):
             break
         guesses -= 1
     if not correct:
-        print "You are out of guesses!"
+        print("You are out of guesses!")
         return
     query.fill_blanks(blank)
     if blank == len(query.answers) - 1:
-        print textwrap.fill(query.question)
+        print(textwrap.fill(query.question))
         return
     play_round(query, blank + 1, guesses)
 
@@ -118,11 +118,11 @@ def get_input(query, blank, guesses):
         guess = " guesses "
     else:
         guess = " guess "
-    print
-    print textwrap.fill(query.question)
-    print
-    print "You have " + str(guesses) + guess + "remaining."
-    return raw_input(
+    print()
+    print(textwrap.fill(query.question))
+    print()
+    print("You have " + str(guesses) + guess + "remaining.")
+    return input(
         "What should replace ___" + str(blank + 1) + "___? ").lower()
 
 
@@ -131,16 +131,16 @@ def check_answer(query, blank, user_input):
 
     correct = query.check_answer(blank, user_input)
     if correct:
-        print "Correct!"
+        print("Correct!")
     else:
-        print "Wrong!"
+        print("Wrong!")
     return correct
 
 
 def play_again():
     """Return whether the user wants to play again."""
 
-    user_input = raw_input("Play again? (y/n): ").lower()
+    user_input = input("Play again? (y/n): ").lower()
     if user_input == 'y':
         return True
     if user_input == 'n':
