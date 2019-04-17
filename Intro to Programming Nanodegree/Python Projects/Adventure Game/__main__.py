@@ -1,6 +1,7 @@
 # -*- coding: UTF-8
-from character import Character, character_stats
-from player import Player
+from classes.actors.bandit import Bandit
+from classes.actors.player import Player
+from classes.combat import Combat
 
 
 def main():
@@ -11,11 +12,13 @@ def main():
 
 
 def story(main_character, enemy):
-    main_character.fight(enemy, False)
+    combat = Combat({main_character}, {enemy}, False)
+    print(combat.combat_order)
+    combat.engage()
 
 
 def random_enemy():
-    return Character('bandit', character_stats['bandit'])
+    return Bandit()
 
 
 if __name__ == "__main__":
