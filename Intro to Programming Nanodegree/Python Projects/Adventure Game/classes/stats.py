@@ -3,6 +3,7 @@
 
 class Stats:
     def __init__(self, stat_array):
+        assert len(stat_array) == 6
         self.strength = stat_array[0]
         self.dexterity = stat_array[1]
         self.constitution = stat_array[2]
