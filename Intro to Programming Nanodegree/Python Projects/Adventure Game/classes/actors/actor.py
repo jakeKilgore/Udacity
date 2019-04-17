@@ -29,7 +29,7 @@ class Actor:
         return self.name
 
     def initiative(self):
-        return Dice.roll(20) + Stats.modifier(self.ability_scores.dexterity)
+        return Dice.roll() + Stats.modifier(self.ability_scores.dexterity)
 
     def attack(self):
         assert (self.enemies is not None and len(self.enemies) > 0), "There are no enemies!"
@@ -49,7 +49,7 @@ class Actor:
         return random.choice(tuple(self.weapons))
 
     def swing(self):
-        return Dice.roll(20) + self.proficiency + Stats.modifier(self.ability_scores.strength)
+        return Dice.roll() + self.proficiency + Stats.modifier(self.ability_scores.strength)
 
     def block(self):
         return self.armor.armor_class
