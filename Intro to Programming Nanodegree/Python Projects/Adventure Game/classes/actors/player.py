@@ -6,11 +6,13 @@ from ..weapons.greatsword import Greatsword
 
 
 class Player(Actor):
+    """Class handling the Player's character. The Player class extends the Actor class."""
     def __init__(self):
+        """Constructor for the Player class."""
         super().__init__(
             name="Player",
             hit_points=58,
-            ability_scores=Stats([18, 14, 16, 11, 13, 9]),
+            ability_scores=Stats(18, 14, 16, 11, 13, 9),
             armor=FullPlate(),
             weapons={Greatsword()},
             proficiency=3,

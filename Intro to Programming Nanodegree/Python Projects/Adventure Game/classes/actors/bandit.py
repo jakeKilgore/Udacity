@@ -7,11 +7,13 @@ from ..armor.leather_armor import LeatherArmor
 
 
 class Bandit(Actor):
+    """Class for handling the Bandit enemy type. The bandit class extends the Actor class."""
     def __init__(self):
+        """Constructor for the Bandit class."""
         super().__init__(
             name="Bandit",
             hit_points=11,
-            ability_scores=Stats([11, 12, 12, 10, 10, 10]),
+            ability_scores=Stats(11, 12, 12, 10, 10, 10),
             armor=LeatherArmor(),
             weapons={Scimitar(), LightCrossbow()},
         )
