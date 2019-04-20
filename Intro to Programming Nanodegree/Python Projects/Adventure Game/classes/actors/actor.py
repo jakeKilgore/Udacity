@@ -26,7 +26,7 @@ class Actor:
             name (string): Name of the actor. By default, it is the empty string.
             hit_points (int): The maximum health of the actor. By default, it is 0.
             ability_scores (Stats): Stats assigned to the character to describe their abilities.
-                                    By default, all values are 10.
+                                    By default, the default stats are used.
             armor (Armor): Armor worn by the actor. By default, the actor has default armor.
             weapons (Set[Weapon]): Weapons equipped by the character. by default, it is an empty set.
             proficiency (int): A general bonus applied to skills the actor is proficient at.
@@ -34,7 +34,7 @@ class Actor:
         self.name = name
         self.max_hit_points = hit_points
         self.hit_points = hit_points
-        self.ability_scores = ability_scores if ability_scores is not None else Stats([10, 10, 10, 10, 10, 10])
+        self.ability_scores = ability_scores if ability_scores is not None else Stats()
         self.armor = armor if armor is not None else Armor()
         self.weapons = weapons if weapons is not None else set()
         self.proficiency = proficiency
@@ -51,7 +51,7 @@ class Actor:
         Return:
             int: Initiative value for the battle.
         """
-        return Dice.roll() + Stats.modifier(self.ability_scores.dexterity)
+        return Dice.roll() + self.ability_scores.dexterity.modifier
 
     def attack(self):
         """Take a turn in combat and attack an enemy.
@@ -91,7 +91,7 @@ class Actor:
         Return:
             int: The attack value to compare against the target's armor class.
         """
-        return Dice.roll() + self.proficiency + Stats.modifier(self.ability_scores.strength)
+        return Dice.roll() + self.proficiency + self.ability_scores.strength.modifier
 
     def block(self):
         """Attempt to block the target's attack.
@@ -112,7 +112,7 @@ class Actor:
         Return:
             int: The amount of damage dealt.
         """
-        damage = Stats.modifier(self.ability_scores.strength)
+        damage = self.ability_scores.strength.modifier
         for die in range(weapon.multiplier):
             damage += Dice.roll(weapon.damage_die)
         return damage
