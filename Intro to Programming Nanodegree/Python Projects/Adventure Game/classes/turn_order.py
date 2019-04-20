@@ -16,7 +16,9 @@ class TurnOrder:
     def __str__(self):
         string = ""
         for placement in self:
-            string += f"{placement.character}: {placement.initiative}\n"
+            string += f"{placement.character}: {placement.initiative}"
+            if placement.next is not None:
+                string += "\n"
         return string
 
     def add(self, member):
