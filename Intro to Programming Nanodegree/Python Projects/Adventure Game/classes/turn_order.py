@@ -22,7 +22,7 @@ class TurnOrder:
         return string
 
     def add(self, member):
-        member_node = Node(member)
+        member_node = Placement(member)
         if self.head is None or member_node > self.head:
             member_node.next = self.head
             self.head = member_node
@@ -48,7 +48,7 @@ class TurnOrder:
                 return
 
 
-class Node:
+class Placement:
     def __init__(self, character):
         self.character = character
         self.initiative = character.initiative()
