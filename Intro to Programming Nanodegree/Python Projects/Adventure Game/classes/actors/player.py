@@ -17,3 +17,16 @@ class Player(Actor):
             weapons={Greatsword()},
             proficiency=3,
         )
+
+    def choose_target(self):
+        """Choose a target to attack.
+
+        This overrides the Actor class' choose_target method. The player will choose a target from the list of enemies.
+        """
+        print("Choose a target:")
+        print(self.enemies)
+        while True:
+            target = input()
+            for enemy in self.enemies:
+                if enemy.name == target:
+                    return enemy
