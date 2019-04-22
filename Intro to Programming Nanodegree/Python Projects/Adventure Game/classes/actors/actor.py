@@ -67,7 +67,9 @@ class Actor:
         if self.swing() >= target.block():
             damage = self.damage(weapon)
             target.take_damage(damage)
-            print(f"{target} takes {damage} damage.")
+            print(f"{target} takes {damage} damage. {target} is now at {target.hit_points} health.")
+            if target.hit_points <= 0:
+                print(f"{target} has died.")
         else:
             print(f"{self} misses.")
 
