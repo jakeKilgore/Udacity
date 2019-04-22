@@ -1,17 +1,40 @@
 # -*- coding: UTF-8
 from .turn_order import TurnOrder
 import time
-# TODO: Add documentation
 
 
 class Combat:
+    """Class for handling combat between actors.
+
+    Combat is allowed between two groups of actors. When combat is entered, all combatants roll initiative and
+    enter a turn order based on that initiative roll. If the attacker combatants surprise the defenders, they will
+    each get a turn before continuing normal turn order. Combat continues until all members of the attackers or all
+    members of the defenders have left combat.
+
+    Attributes:
+        attackers (Set[Actor]): A collection of combatants initiating combat with the defenders.
+        defenders (Set[Actor]): A collection of combatants being engaged in combat by the attackers.
+        surprise (bool): Whether the attackers have surprised the defenders.
+        combat_order (TurnOrder): The order in which combatants will take their turn in combat.
+    """
     def __init__(self, attackers, defenders, surprise):
+        """Constructor for the Combat class.
+
+        Parameters:
+            attackers (Set[Actor]): A collection of combatants initiating combat with the defenders.
+            defenders (Set[Actor]): A collection of combatants being engaged in combat by the attackers.
+            surprise (bool): Whether the attackers have surprised the defenders.
+        """
         self.attackers = attackers
         self.defenders = defenders
         self.surprise = surprise
         self.combat_order = TurnOrder(attackers.union(defenders))
 
     def engage(self):
+        """Begin combat.
+
+        Combat consists of looping through the turn order until either the attackers or defenders have all left combat.
+        """
         print(f"You are fighting {self.defenders}")
         for character in self.attackers:
             character.enemies = self.defenders
