@@ -129,4 +129,5 @@ class Actor:
 
     def die(self):
         """The actor will die."""
+        self.enemies = None
         self.alive = False
