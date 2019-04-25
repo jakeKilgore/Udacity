@@ -2,6 +2,7 @@
 from classes.actors.bandit import Bandit
 from classes.actors.player import Player
 from classes.combat import Combat
+from classes.party import Party
 
 
 def main():
@@ -12,7 +13,7 @@ def main():
 
 
 def story(main_character, enemy):
-    combat = Combat({main_character}, {enemy}, False)
+    combat = Combat(Party([main_character]), Party([enemy]), False)
     print(combat.combat_order)
     combat.engage()
 

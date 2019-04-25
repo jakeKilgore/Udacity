@@ -10,15 +10,18 @@ class TurnOrder:
     Attributes:
         head (Placement): The first placement in the combat order.
     """
-    def __init__(self, combatants):
+    def __init__(self, attackers, defenders):
         """Constructor for the TurnOrder class.
 
         Parameters:
-            combatants (Set[Actor]): A collection of actors taking part in the combat.
+            attackers (Party): The group of actors initiating combat.
+            defenders (Party): The group of actors being attacked.
         """
         self.head = None
-        for member in combatants:
-            self.add(member)
+        for combatant in attackers:
+            self.add(combatant)
+        for combatant in defenders:
+            self.add(combatant)
 
     def __iter__(self):
         """An iterator allowing traversal of the TurnOrder list."""

@@ -27,6 +27,5 @@ class Player(Actor):
         print(self.enemies)
         while True:
             target = input()
-            for enemy in self.enemies:
-                if enemy.name == target:
-                    return enemy
+            if target in self.enemies:
+                return self.enemies[target]

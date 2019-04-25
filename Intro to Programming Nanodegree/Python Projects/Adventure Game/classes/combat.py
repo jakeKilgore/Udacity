@@ -12,8 +12,8 @@ class Combat:
     members of the defenders have left combat.
 
     Attributes:
-        attackers (Set[Actor]): A collection of combatants initiating combat with the defenders.
-        defenders (Set[Actor]): A collection of combatants being engaged in combat by the attackers.
+        attackers (Party): A collection of combatants initiating combat with the defenders.
+        defenders (Party): A collection of combatants being engaged in combat by the attackers.
         surprise (bool): Whether the attackers have surprised the defenders.
         combat_order (TurnOrder): The order in which combatants will take their turn in combat.
     """
@@ -21,14 +21,14 @@ class Combat:
         """Constructor for the Combat class.
 
         Parameters:
-            attackers (Set[Actor]): A collection of combatants initiating combat with the defenders.
-            defenders (Set[Actor]): A collection of combatants being engaged in combat by the attackers.
+            attackers (Party): A collection of actors initiating combat with the defenders.
+            defenders (Party): A collection of actors being engaged in combat by the attackers.
             surprise (bool): Whether the attackers have surprised the defenders.
         """
         self.attackers = attackers
         self.defenders = defenders
         self.surprise = surprise
-        self.combat_order = TurnOrder(attackers.union(defenders))
+        self.combat_order = TurnOrder(attackers, defenders)
 
     def engage(self):
         """Begin combat.
