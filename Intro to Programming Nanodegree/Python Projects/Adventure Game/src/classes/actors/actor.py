@@ -1,5 +1,5 @@
 # -*- coding: UTF-8
-from ..typing import Typing
+from ..console import Console
 from ..stats import Stats
 from ..dice import Dice
 from ..armor.armor import Armor
@@ -64,15 +64,15 @@ class Actor:
         assert (self.enemies is not None and len(self.enemies) > 0), "There are no enemies!"
         target = self.choose_target()
         weapon = self.choose_weapon()
-        Typing.output(f"{self} attacks {target} with a {weapon}.")
+        Console.output(f"{self} attacks {target} with a {weapon}.")
         if self.swing() >= target.block():
             damage = self.damage(weapon)
             target.take_damage(damage)
-            Typing.output(f"{target} takes {damage} damage. {target} is now at {target.hit_points} health.")
+            Console.output(f"{target} takes {damage} damage. {target} is now at {target.hit_points} health.")
             if target.hit_points <= 0:
-                Typing.output(f"{target} has died.")
+                Console.output(f"{target} has died.")
         else:
-            Typing.output(f"{self} misses.")
+            Console.output(f"{self} misses.")
 
     def choose_target(self):
         """Choose a target to attack.
