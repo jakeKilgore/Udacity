@@ -1,8 +1,13 @@
 # -*- coding: UTF-8
 import time
 import random
-from ..classes import vocabulary
+
 from .action import Action
+
+character_delay_range = (0.01, 0.05)
+word_delay_range = (.1, .3)
+character_delay = False
+word_delay = False
 
 
 class Console:
@@ -16,9 +21,12 @@ class Console:
             if len(word) > Console.character_limit - Console.current_character:
                 Console.end_line()
             for character in word:
+                if character is '\n':
+                    Console.end_line()
+                    continue
                 print(character, end='')
                 Console.current_character += 1
-                #Console.character_delay()
+                Console.character_delay()
             print(' ', end='')
             Console.current_character += 1
             Console.word_delay()
@@ -37,26 +45,29 @@ class Console:
 
     @staticmethod
     def character_delay():
-        time.sleep(random.uniform(0.01, 0.05))
+        if not character_delay:
+            return
+        time.sleep(random.uniform(*character_delay_range))
 
     @staticmethod
     def word_delay():
-        time.sleep(random.uniform(.1, .3))
+        if not word_delay:
+            return
+        time.sleep(random.uniform(*word_delay_range))
 
     @staticmethod
-    def user_action(nouns=None, verbs=None):
-        if nouns is None:
-            nouns = []
-        if verbs is None:
-            verbs = []
-        noun = None
-        verb = None
+    def user_action(objects=None, noun=None, verb=None):
+        if objects is None:
+            objects = {}
+        actions = set()
+        for obj in objects.keys():
+            actions.update(objects[obj].actions.keys())
         user_input = input().split(' ')
         for word in user_input:
             word = Console.format(word)
-            if word in nouns or word in vocabulary.nouns_list:
+            if word in objects.keys():
                 noun = word
-            if word in verbs or word in vocabulary.verbs_list:
+            if word in actions:
                 verb = word
         return Action(verb, noun)
 

@@ -18,6 +18,8 @@ class Player(Actor):
             weapons={Greatsword()},
             proficiency=3,
         )
+        self.description = "You are wearing a set of steel plate armor, and carry a hefty greatsword in a scabbard " \
+                           "on your back."
 
     def choose_target(self):
         """Choose a target to attack.
@@ -27,7 +29,7 @@ class Player(Actor):
         Console.output("Choose a target:")
         Console.output(self.enemies)
         while True:
-            action = Console.user_action(nouns=self.enemies)
+            action = Console.user_action(self.enemies)
             target = action.noun
             if target in self.enemies:
                 return self.enemies[target]

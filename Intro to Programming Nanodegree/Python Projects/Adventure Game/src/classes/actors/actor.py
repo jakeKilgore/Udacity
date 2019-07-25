@@ -3,10 +3,11 @@ from ..console import Console
 from ..stats import Stats
 from ..dice import Dice
 from ..armor.armor import Armor
+from ..interactable import Interactable
 import random
 
 
-class Actor:
+class Actor(Interactable):
     """Class for handling characters in the story.
 
     Attributes:
@@ -32,6 +33,7 @@ class Actor:
             weapons (Set[Weapon]): Weapons equipped by the character. by default, it is an empty set.
             proficiency (int): A general bonus applied to skills the actor is proficient at.
         """
+        super().__init__()
         self.name = name
         self.max_hit_points = hit_points
         self.hit_points = hit_points

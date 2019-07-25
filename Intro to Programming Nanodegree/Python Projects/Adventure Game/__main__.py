@@ -3,7 +3,7 @@ import src.classes.actors.bandit as bandit
 import src.classes.actors.player as player
 import src.classes.combat as combat
 import src.classes.party as party
-import src.classes.scenes.introduction as introduction
+import src.classes.scenes.introduction.introduction as introduction
 
 
 def main():
@@ -15,9 +15,9 @@ def main():
 
 
 def story(main_character, enemy):
-    #introduction.Introduction().play()
-    fight = combat.Combat(party.Party([main_character]), party.Party([enemy]), False)
-    fight.engage()
+    introduction.Introduction({'Self': main_character}).play()
+    #fight = combat.Combat(party.Party([main_character]), party.Party([enemy]), False)
+    #fight.engage()
 
 
 def random_enemy():
