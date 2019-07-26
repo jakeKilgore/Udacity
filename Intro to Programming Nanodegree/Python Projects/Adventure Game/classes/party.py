@@ -13,7 +13,7 @@ class Party(Mapping):
         """Constructor for the Party class.
 
         Parameters:
-            members (List[Actor]): A group of actors working together.
+            members (list[Actor]): A group of actors working together.
         """
         self.members = {}
         for member in members:

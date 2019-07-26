@@ -1,23 +1,22 @@
 # -*- coding: UTF-8
-import src.classes.actors.bandit as bandit
-import src.classes.actors.player as player
-import src.classes.combat as combat
-import src.classes.party as party
-import src.classes.scenes.introduction.introduction as introduction
+import classes.actors.bandit as bandit
+import classes.actors.player as player
+import classes.scenes.introduction.introduction as introduction
+import classes.interactable as interactable
 
 
 def main():
     print()
+    game = interactable.Interactable()
+    game.actions.update({'exit': lambda: exit(0)})
+    game.description = "You're in it! You can exit it, if you want to."
     main_character = player.Player()
-    enemy = random_enemy()
-    story(main_character, enemy)
+    story(main_character, game)
     return
 
 
-def story(main_character, enemy):
-    introduction.Introduction({'Self': main_character}).play()
-    #fight = combat.Combat(party.Party([main_character]), party.Party([enemy]), False)
-    #fight.engage()
+def story(main_character, game):
+    introduction.Introduction({'self': main_character, 'game': game}).play()
 
 
 def random_enemy():

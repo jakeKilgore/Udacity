@@ -1,6 +1,6 @@
 # -*- coding: UTF-8
 from .turn_order import TurnOrder
-from .console import Console
+import classes.console as console
 import time
 
 
@@ -36,7 +36,7 @@ class Combat:
 
         Combat consists of looping through the turn order until either the attackers or defenders have all left combat.
         """
-        Console.output(f"You are fighting {self.defenders}")
+        console.output(f"You are fighting {self.defenders}")
         for character in self.attackers:
             character.enemies = self.defenders
         for character in self.defenders:

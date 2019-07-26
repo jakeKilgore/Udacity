@@ -1,6 +1,6 @@
 # -*- coding: UTF-8
 from .actor import Actor
-from ..console import Console
+import classes.console as console
 from ..stats import Stats
 from ..armor.full_plate import FullPlate
 from ..weapons.greatsword import Greatsword
@@ -26,10 +26,10 @@ class Player(Actor):
 
         This overrides the Actor class' choose_target method. The player will choose a target from the list of enemies.
         """
-        Console.output("Choose a target:")
-        Console.output(self.enemies)
+        console.output("Choose a target:")
+        console.output(self.enemies)
         while True:
-            action = Console.user_action(self.enemies)
+            action = console.user_action(self.enemies)
             target = action.noun
             if target in self.enemies:
                 return self.enemies[target]

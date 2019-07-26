@@ -1,5 +1,5 @@
 # -*- coding: UTF-8
-from ..console import Console
+import classes.console as console
 from ..stats import Stats
 from ..dice import Dice
 from ..armor.armor import Armor
@@ -66,15 +66,15 @@ class Actor(Interactable):
         assert (self.enemies is not None and len(self.enemies) > 0), "There are no enemies!"
         target = self.choose_target()
         weapon = self.choose_weapon()
-        Console.output(f"{self} attacks {target} with a {weapon}.")
+        console.output(f"{self} attacks {target} with a {weapon}.")
         if self.swing() >= target.block():
             damage = self.damage(weapon)
             target.take_damage(damage)
-            Console.output(f"{target} takes {damage} damage. {target} is now at {target.hit_points} health.")
+            console.output(f"{target} takes {damage} damage. {target} is now at {target.hit_points} health.")
             if target.hit_points <= 0:
-                Console.output(f"{target} has died.")
+                console.output(f"{target} has died.")
         else:
-            Console.output(f"{self} misses.")
+            console.output(f"{self} misses.")
 
     def choose_target(self):
         """Choose a target to attack.
