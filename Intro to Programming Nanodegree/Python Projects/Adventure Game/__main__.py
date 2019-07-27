@@ -1,7 +1,7 @@
 # -*- coding: UTF-8
 import classes.actors.bandit as bandit
 import classes.actors.player as player
-import classes.scenes.introduction.introduction as introduction
+import classes.scenes.intro.introduction as introduction
 import classes.interactable as interactable
 
 
@@ -24,8 +24,4 @@ def random_enemy():
 
 
 if __name__ == "__main__":
-    import os
-    import sys
-    path = os.path.dirname(os.path.join(os.getcwd(), __file__))
-    sys.path.append(os.path.normpath(os.path.join(path, '..', '..')))
     main()

@@ -2,7 +2,7 @@ from ...interactable import Interactable
 import classes.console as console
 
 
-class Doors(Interactable):
+class OutsideDoors(Interactable):
     """Class for handling the door blocking passage into the tomb in the first scene.
 
     The door will serve as a tutorial for the command structure for the rest of the game. It has two actions associated
@@ -26,7 +26,7 @@ class Doors(Interactable):
             console.output("The doors are already open.")
             return False
         self.is_open = True
-        console.output("You push on the heavy, stone doors, opening them.")
+        console.output("The heavy doors grind against the ground as you push them open.")
         return False
 
     def enter(self):

@@ -1,5 +1,5 @@
 # -*- coding: UTF-8
-from .doors import Doors
+from .outsidedoors import OutsideDoors
 import classes.scenes.scene as scene
 import classes.console as console
 
@@ -8,9 +8,6 @@ class Introduction(scene.Scene):
     """Class for handling the first scene in the game.
 
     The player will approach a doorway and then enter. This serves as a tutorial for the user input system of the game.
-
-    Attributes:
-        doors (Doors): A set of doors blocking the player's way into the tomb.
     """
 
     def __init__(self, objects):
@@ -36,11 +33,19 @@ class Introduction(scene.Scene):
                 lambda: scene.pause(),
                 "The heavy, stone doors of the tomb loom in front of you.",
                 lambda: scene.pause(),
-                lambda: console.whitespace(),
+                lambda: console.whitespace(2),
                 "What would you like to do?",
+            ],
+            resolution=[
+                "Just as soon as you pass through the doorway, a gust of wind blows out from the depths of the tomb.",
+                lambda: scene.pause(),
+                "You stumble a bit as you brace against the gale, and the doors slam shut behind you.",
+                lambda: scene.pause(),
+                "As the doors seal, the wind stops, and the dust of the tomb slowly settles.",
             ],
             proceed=False,
             objects=objects,
         )
-        self.doors = Doors()
-        self.objects.update({'doors': self.doors})
+        doors = OutsideDoors()
+        self.objects.update({'doors': doors})
+
