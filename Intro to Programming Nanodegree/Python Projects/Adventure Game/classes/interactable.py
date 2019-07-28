@@ -1,5 +1,4 @@
-from collections import Set
-
+# -*- coding: UTF-8
 import classes.console as console
 
 

@@ -1,3 +1,4 @@
+# -*- coding: UTF-8
 import classes.console as console
 import classes.scenes.scene as scene
 from classes.scenes.entrance.braziers import Braziers

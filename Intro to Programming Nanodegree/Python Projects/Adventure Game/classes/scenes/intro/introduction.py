@@ -1,5 +1,6 @@
 # -*- coding: UTF-8
 from .outsidedoors import OutsideDoors
+# -*- coding: UTF-8
 import classes.scenes.scene as scene
 import classes.console as console
 

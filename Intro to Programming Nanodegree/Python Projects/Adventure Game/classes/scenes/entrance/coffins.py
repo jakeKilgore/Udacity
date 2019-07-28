@@ -1,3 +1,4 @@
+# -*- coding: UTF-8
 from classes import console
 from classes.interactable import Interactable
 

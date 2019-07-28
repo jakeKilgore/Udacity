@@ -1,3 +1,4 @@
+# -*- coding: UTF-8
 class Command:
     """Class handling the structure of user commands.
 
