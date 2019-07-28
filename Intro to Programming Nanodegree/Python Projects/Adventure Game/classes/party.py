@@ -17,7 +17,7 @@ class Party(Mapping):
         """
         self.members = {}
         for member in members:
-            self.members[member.name] = member
+            self.members[member.name.lower()] = member
 
     def __iter__(self):
         """Iterate through the members of the party."""
@@ -31,7 +31,7 @@ class Party(Mapping):
             member (Actor or str): The member to check for. This may be the name or the Actor object of the member.
         """
         if isinstance(member, Actor):
-            key = member.name
+            key = member.name.lower()
         else:
             key = member
         return self.members.__getitem__(key)
@@ -56,7 +56,7 @@ class Party(Mapping):
             member (Actor or str): The member to remove. This may be the name or the Actor object of the member.
         """
         if isinstance(member, Actor):
-            key = member.name
+            key = member.name.lower()
         else:
             key = member
         try:
