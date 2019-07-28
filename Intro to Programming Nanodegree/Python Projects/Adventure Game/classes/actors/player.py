@@ -12,14 +12,14 @@ class Player(Actor):
         """Constructor for the Player class."""
         super().__init__(
             name="Player",
+            description="You are wearing a set of steel plate armor, and carry a hefty greatsword in a scabbard "
+                        "on your back.",
             hit_points=58,
             ability_scores=Stats(18, 14, 16, 11, 13, 9),
             armor=FullPlate(),
             weapons={Greatsword()},
             proficiency=3,
         )
-        self.description = "You are wearing a set of steel plate armor, and carry a hefty greatsword in a scabbard " \
-                           "on your back."
 
     def choose_target(self):
         """Choose a target to attack.

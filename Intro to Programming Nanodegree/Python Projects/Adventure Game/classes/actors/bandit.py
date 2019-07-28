@@ -12,6 +12,7 @@ class Bandit(Actor):
         """Constructor for the Bandit class."""
         super().__init__(
             name=name,
+            description="They are wearing patchwork, leather armor, and carrying a shortsword and crossbow.",
             hit_points=11,
             ability_scores=Stats(11, 12, 12, 10, 10, 10),
             armor=LeatherArmor(),

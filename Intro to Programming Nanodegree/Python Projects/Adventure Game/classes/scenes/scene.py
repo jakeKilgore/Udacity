@@ -16,9 +16,7 @@ class Scene:
         objects (dict[Interactable]): A collection of items in the scene.
     """
 
-    pause_time = .5     # The time in seconds to delay the scene during pauses.
-
-    def __init__(self, setup, resolution=None, proceed=True, objects=None):
+    def __init__(self, game_objects, setup, resolution=None, proceed=True, objects=None):
         """Constructor for the Scene class.
 
         Parameters:
@@ -28,10 +26,12 @@ class Scene:
             proceed (bool): Whether or not the scene should end at the end of the setup. Defaults to True.
             objects (dict[Interactable]): A collection of items in the scene. Defaults to an empty set.
         """
+        self.objects = game_objects.copy()
         self.setup = setup
         self.resolution = resolution if resolution is not None else []
         self.proceed = proceed
-        self.objects = objects if objects is not None else dict()
+        if type(objects) is dict:
+            self.objects.update(objects)
 
     def play(self):
         """Play the setup of the scene.
@@ -46,13 +46,13 @@ class Scene:
     def action(self):
         """If the scene is not set to proceed, accept user input until that causes the scene to end."""
         while not self.proceed:
-            user_input = console.user_action(objects=self.objects)
-            valid_object = user_input.noun in self.objects
-            valid_command = valid_object and user_input.verb in self.objects[user_input.noun].actions
+            command = console.user_action(objects=self.objects)
+            valid_object = command.noun in self.objects
+            valid_command = valid_object and command.verb in self.objects[command.noun].actions
             if not valid_command:
-                self.invalid_command(user_input)
+                self.invalid_command(command)
             else:
-                action = self.objects[user_input.noun].actions[user_input.verb]
+                action = self.objects[command.noun].actions[command.verb]
                 assert (callable(action)), "Invalid action " + action
                 self.proceed = action()
 
@@ -77,8 +77,3 @@ def read(script):
         elif callable(line):
             line()
     console.end_line()
-
-
-def pause():
-    """Pause the scene for a moment."""
-    time.sleep(Scene.pause_time)

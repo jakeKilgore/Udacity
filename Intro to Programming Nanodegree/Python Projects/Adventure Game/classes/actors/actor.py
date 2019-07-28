@@ -21,7 +21,7 @@ class Actor(Interactable):
         enemies (Set[Actor]): Valid targets for attack.
         alive (bool): Whether the actor is currently alive.
     """
-    def __init__(self, name, hit_points=0, ability_scores=None, armor=None, weapons=None, proficiency=0):
+    def __init__(self, name, description, hit_points=0, ability_scores=None, armor=None, weapons=None, proficiency=0, ):
         """Constructor for the Actor class.
 
         Parameters:
@@ -33,7 +33,7 @@ class Actor(Interactable):
             weapons (Set[Weapon]): Weapons equipped by the character. by default, it is an empty set.
             proficiency (int): A general bonus applied to skills the actor is proficient at.
         """
-        super().__init__()
+        super().__init__(description=description)
         self.name = name
         self.max_hit_points = hit_points
         self.hit_points = hit_points
