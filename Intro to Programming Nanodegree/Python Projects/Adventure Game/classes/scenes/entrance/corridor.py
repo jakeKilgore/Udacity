@@ -9,3 +9,6 @@ class Corridor(Interactable):
                         "It turns, so you can't see to the next room.",
             actions={'enter': lambda: self.enter()},
         )
+
+    def enter(self):
+        return True
