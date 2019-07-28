@@ -18,7 +18,7 @@ class Combat:
         surprise (bool): Whether the attackers have surprised the defenders.
         combat_order (TurnOrder): The order in which combatants will take their turn in combat.
     """
-    def __init__(self, attackers, defenders, surprise):
+    def __init__(self, attackers, defenders, surprise=False):
         """Constructor for the Combat class.
 
         Parameters:
