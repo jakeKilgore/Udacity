@@ -7,8 +7,9 @@ from .command import Command
 
 character_delay_range = (0.01, 0.05)    # The random time range in seconds to pause between each character.
 word_delay_range = (.05, .1)            # The random time range in seconds to pause between each word.
-do_character_delay = False              # Whether to pause between characters.
-do_word_delay = False                   # Whether to pause between words.
+comma_delay_time = .3                   # The time in seconds to pause after a comma.
+sentence_delay_time = .5                # The time in seconds to pause between sentences.
+do_delay = True                         # Whether to slow down console output.
 current_character = 0                   # Current place on the line.
 
 
@@ -30,10 +31,16 @@ def output(string_output, new_line=True):
                 continue
             print(character, end='', flush=True)
             current_character += 1
-            character_delay()
+            if do_delay:
+                delay(character_delay_range)
+                if character is '.':
+                    delay(sentence_delay_time)
+                elif character is ',':
+                    delay(comma_delay_time)
         print(' ', end='')
         current_character += 1
-        word_delay()
+        if do_delay:
+            delay(word_delay_range)
     if new_line:
         end_line()
 
@@ -51,18 +58,12 @@ def end_line():
     current_character = 0
 
 
-def character_delay():
-    """Delay the console output after each character."""
-    if not do_character_delay:
-        return
-    time.sleep(random.uniform(*character_delay_range))
-
-
-def word_delay():
-    """Delay the console output after each word."""
-    if not do_word_delay:
-        return
-    time.sleep(random.uniform(*word_delay_range))
+def delay(delay_time):
+    """Delay the console output for a moment."""
+    if type(delay_time) is tuple:
+        time.sleep(random.uniform(*delay_time))
+    else:
+        time.sleep(delay_time)
 
 
 def user_action(objects=None, noun=None, verb=None):
