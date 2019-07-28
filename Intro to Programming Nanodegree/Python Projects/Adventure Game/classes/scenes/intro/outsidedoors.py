@@ -16,10 +16,11 @@ class OutsideDoors(Interactable):
 
     def __init__(self):
         """Constructor for the Door class."""
-        super().__init__()
+        super().__init__(
+            description="A set of heavy, stone doors.",
+            actions={'open': lambda: self.open(), 'enter': lambda: self.enter()},
+        )
         self.is_open = False
-        self.description = "A set of heavy, stone doors."
-        self.actions.update({'open': lambda: self.open(), 'enter': lambda: self.enter()})
 
     def open(self):
         """Open the door, allowing the use of the Enter command."""

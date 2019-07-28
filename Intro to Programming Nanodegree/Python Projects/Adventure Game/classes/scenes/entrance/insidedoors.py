@@ -7,9 +7,10 @@ class InsideDoors(Interactable):
 
     def __init__(self):
         """Constructor for the Door class."""
-        super().__init__()
-        self.description = "The heavy, stone doors you just entered through. The wind closed them."
-        self.actions.update({'open': lambda: self.open(), 'enter': lambda: self.enter()})
+        super().__init__(
+            description="The heavy, stone doors you just entered through. The wind closed them.",
+            actions={'open': lambda: self.open(), 'enter': lambda: self.enter()},
+        )
 
     def open(self):
         """The doors will refuse to open."""

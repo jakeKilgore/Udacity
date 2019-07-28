@@ -9,10 +9,12 @@ class Interactable:
         description (str): A text description of the object.
         actions (dict[str,lambda]): A dictionary of action names to their associated functions.
     """
-    def __init__(self):
+    def __init__(self, description=None, actions=None):
         """Constructor for the Interactable class."""
-        self.description = None
+        self.description = description
         self.actions = {'look': lambda: self.look()}
+        if type(actions) is dict:
+            self.actions.update(actions)
 
     def look(self):
         """Display the object's description."""
