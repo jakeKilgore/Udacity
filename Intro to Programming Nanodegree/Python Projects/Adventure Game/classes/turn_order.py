@@ -4,8 +4,9 @@
 class TurnOrder:
     """Class for handling the order of turns in combat.
 
-    TurnOrder is implemented as an ordered, singly-linked list made up of Placement objects. They are ordered from
-    highest-initiative combatant to lowest-initiative combatant.
+    TurnOrder is implemented as an ordered, singly-linked list made up of
+    Placement objects. They are ordered from highest-initiative combatant to
+    lowest-initiative combatant.
 
     Attributes:
         head (Placement): The first placement in the combat order.
@@ -81,7 +82,8 @@ class Placement:
 
     Attributes:
         character (Actor): The character who will act on this turn.
-        initiative (int): The value determining a character's place in the turn order. Higher initiatives go first.
+        initiative (int): The value determining a character's place
+            in the turn order. Higher initiatives go first.
         next (Placement): The next placement in the turn order.
     """
     def __init__(self, character):
@@ -107,7 +109,9 @@ class Placement:
         return self.initiative < other.initiative
 
     def __le__(self, other):
-        """Return whether this Placement is less than or equal to another Placement."""
+        """Return whether this Placement is less than or equal
+        to another Placement.
+        """
         return self.initiative <= other.initiative
 
     def __gt__(self, other):
@@ -115,5 +119,7 @@ class Placement:
         return self.initiative > other.initiative
 
     def __ge__(self, other):
-        """Return whether this Placement is greater than or equal to another Placement."""
+        """Return whether this Placement is greater than or equal to
+        another Placement.
+        """
         return self.initiative < other.initiative

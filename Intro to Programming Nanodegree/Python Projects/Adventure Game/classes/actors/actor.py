@@ -14,30 +14,41 @@ class Actor(Interactable):
         name (string): Name of the actor.
         max_hit_points (int): The maximum health of the actor.
         hit_points (int): The current health of the actor.
-        ability_scores (Stats): Stats assigned to the character to describe their abilities.
+        ability_scores (Stats): Stats assigned to the character to describe
+            their abilities.
         armor (Armor): Armor worn by the actor.
         weapons (Set[Weapon]): Weapons equipped by the character.
-        proficiency (int): A general bonus applied to skills the actor is proficient at.
+        proficiency (int): A general bonus applied to skills the actor is
+            proficient at.
         enemies (Set[Actor]): Valid targets for attack.
         alive (bool): Whether the actor is currently alive.
     """
-    def __init__(self, name, description, hit_points=0, ability_scores=None, armor=None, weapons=None, proficiency=0, ):
+    def __init__(self, name, description, hit_points=0, ability_scores=None,
+                 armor=None, weapons=None, proficiency=0, ):
         """Constructor for the Actor class.
 
         Parameters:
-            name (string): Name of the actor. By default, it is the empty string.
-            hit_points (int): The maximum health of the actor. By default, it is 0.
-            ability_scores (Stats): Stats assigned to the character to describe their abilities.
-                                    By default, the default stats are used.
-            armor (Armor): Armor worn by the actor. By default, the actor has default armor.
-            weapons (Set[Weapon]): Weapons equipped by the character. by default, it is an empty set.
-            proficiency (int): A general bonus applied to skills the actor is proficient at.
+            name (string): Name of the actor. By default, it is the empty
+                string.
+            hit_points (int): The maximum health of the actor. By default, it
+                is 0.
+            ability_scores (Stats): Stats assigned to the character to describe
+                their abilities. By default, the default stats are used.
+            armor (Armor): Armor worn by the actor. By default, the actor has
+                default armor.
+            weapons (Set[Weapon]): Weapons equipped by the character. by
+                default, it is an empty set.
+            proficiency (int): A general bonus applied to skills the actor is
+                proficient at.
         """
         super().__init__(description=description)
         self.name = name
         self.max_hit_points = hit_points
         self.hit_points = hit_points
-        self.ability_scores = ability_scores if ability_scores is not None else Stats()
+        if ability_scores is not None:
+            self.ability_scores = ability_scores
+        else:
+            self.ability_scores = Stats()
         self.armor = armor if armor is not None else Armor()
         self.weapons = weapons if weapons is not None else set()
         self.proficiency = proficiency
@@ -59,18 +70,21 @@ class Actor(Interactable):
     def attack(self):
         """Take a turn in combat and attack an enemy.
 
-        The actor will choose a target and a weapon to attack with. The actor will swing at the target and, if their
-        attack roll matches the target's armor, the attack will hit. The damage of the attack is determined by the
-        chosen weapon.
+        The actor will choose a target and a weapon to attack with. The
+        actor will swing at the target and, if their attack roll matches the
+        target's armor, the attack will hit. The damage of the attack is
+        determined by the chosen weapon.
         """
-        assert (self.enemies is not None and len(self.enemies) > 0), "There are no enemies!"
+        valid_enemies = self.enemies is not None and len(self.enemies) > 0
+        assert valid_enemies, "There are no enemies!"
         target = self.choose_target()
         weapon = self.choose_weapon()
         console.output(f"{self} attacks {target} with a {weapon}.")
         if self.swing() >= target.block():
             damage = self.damage(weapon)
             target.take_damage(damage)
-            console.output(f"{target} takes {damage} damage. {target} is now at {target.hit_points} health.")
+            console.output(f"{target} takes {damage} damage. {target} is now "
+                           f"at {target.hit_points} health.")
             if target.hit_points <= 0:
                 console.output(f"{target} has died.")
         else:
@@ -96,7 +110,8 @@ class Actor(Interactable):
         Return:
             int: The attack value to compare against the target's armor class.
         """
-        return Dice.roll() + self.proficiency + self.ability_scores.strength.modifier
+        modifier = self.proficiency + self.ability_scores.strength.modifier
+        return Dice.roll() + modifier
 
     def block(self):
         """Attempt to block the target's attack.
@@ -109,7 +124,8 @@ class Actor(Interactable):
     def damage(self, weapon):
         """Roll for damage.
 
-        Damage is determined by rolling a number of dice determined by the chosen weapon.
+        Damage is determined by rolling a number of dice determined by the
+        chosen weapon.
 
         Parameters:
             weapon (Weapon): The weapon used to damage the target.

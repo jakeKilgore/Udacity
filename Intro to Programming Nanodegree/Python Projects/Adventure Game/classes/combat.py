@@ -7,24 +7,32 @@ import time
 class Combat:
     """Class for handling combat between actors.
 
-    Combat is allowed between two groups of actors. When combat is entered, all combatants roll initiative and
-    enter a turn order based on that initiative roll. If the attacker combatants surprise the defenders, they will
-    each get a turn before continuing normal turn order. Combat continues until all members of the attackers or all
-    members of the defenders have left combat.
+    Combat is allowed between two groups of actors. When combat is entered,
+    all combatants roll initiative and enter a turn order based on that
+    initiative roll. If the attacker combatants surprise the defenders,
+    they will each get a turn before continuing normal turn order. Combat
+    continues until all members of the attackers or all members of the
+    defenders have left combat.
 
     Attributes:
-        attackers (Party): A collection of combatants initiating combat with the defenders.
-        defenders (Party): A collection of combatants being engaged in combat by the attackers.
+        attackers (Party): A collection of combatants initiating combat with
+            the defenders.
+        defenders (Party): A collection of combatants being engaged in combat
+            by the attackers.
         surprise (bool): Whether the attackers have surprised the defenders.
-        combat_order (TurnOrder): The order in which combatants will take their turn in combat.
+        combat_order (TurnOrder): The order in which combatants will take
+            their turn in combat.
     """
     def __init__(self, attackers, defenders, surprise=False):
         """Constructor for the Combat class.
 
         Parameters:
-            attackers (Party): A collection of actors initiating combat with the defenders.
-            defenders (Party): A collection of actors being engaged in combat by the attackers.
-            surprise (bool): Whether the attackers have surprised the defenders.
+            attackers (Party): A collection of actors initiating combat with
+                the defenders.
+            defenders (Party): A collection of actors being engaged in combat
+                by the attackers.
+            surprise (bool): Whether the attackers have surprised the
+                defenders.
         """
         self.attackers = attackers
         self.defenders = defenders
@@ -34,7 +42,8 @@ class Combat:
     def engage(self):
         """Begin combat.
 
-        Combat consists of looping through the turn order until either the attackers or defenders have all left combat.
+        Combat consists of looping through the turn order until either the
+        attackers or defenders have all left combat.
         """
         console.output(f"You are fighting {self.defenders}")
         for character in self.attackers:

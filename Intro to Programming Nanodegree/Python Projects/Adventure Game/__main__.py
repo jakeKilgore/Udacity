@@ -3,6 +3,7 @@ from classes.actors.player import Player
 from classes.interactable import Interactable
 from classes.scenes.entrance.entryway import Entryway
 from classes.scenes.fight.banditfight import BanditFight
+from classes.scenes.game_over.end import End
 from classes.scenes.intro.introduction import Introduction
 
 
@@ -22,6 +23,10 @@ def story(main_character, game):
     Introduction(game_objects).play()
     Entryway(game_objects).play()
     BanditFight(game_objects).play()
+    end = End(game_objects)
+    end.play()
+    if end.confirm.play_again:
+        main()
 
 
 if __name__ == "__main__":

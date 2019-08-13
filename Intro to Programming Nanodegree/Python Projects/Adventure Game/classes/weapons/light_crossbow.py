@@ -3,7 +3,9 @@ from .weapon import Weapon
 
 
 class LightCrossbow(Weapon):
-    """Class handling the Light Crossbow weapon type. The Light Crossbow deals 1d8 damage."""
+    """Class handling the Light Crossbow weapon type.
+    The Light Crossbow deals 1d8 damage.
+    """
     def __init__(self):
         """Constructor for the LightCrossbow class."""
         super().__init__(

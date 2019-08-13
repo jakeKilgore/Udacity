@@ -28,7 +28,8 @@ class Party(Mapping):
         """Retrieve one of the members of the party, if it is present.
 
         Parameters:
-            member (Actor or str): The member to check for. This may be the name or the Actor object of the member.
+            member (Actor or str): The member to check for.
+                This may be the name or the Actor object of the member.
         """
         if isinstance(member, Actor):
             key = member.name.lower()
@@ -53,7 +54,8 @@ class Party(Mapping):
         If the given parameter is not in the party, no error is raised.
 
         Parameters:
-            member (Actor or str): The member to remove. This may be the name or the Actor object of the member.
+            member (Actor or str): The member to remove. This may be the name
+                or the Actor object of the member.
         """
         if isinstance(member, Actor):
             key = member.name.lower()

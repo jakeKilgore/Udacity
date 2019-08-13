@@ -5,21 +5,22 @@ import shutil
 
 from .command import Command
 
-character_delay_range = (0.01, 0.05)    # The random time range in seconds to pause between each character.
-word_delay_range = (.05, .1)            # The random time range in seconds to pause between each word.
-comma_delay_time = .3                   # The time in seconds to pause after a comma.
-sentence_delay_time = .5                # The time in seconds to pause between sentences.
-do_delay = True                         # Whether to slow down console output.
-current_character = 0                   # Current place on the line.
+character_delay_range = (0.01, 0.05)
+word_delay_range = (.05, .1)
+comma_delay_time = .3
+sentence_delay_time = .5
+do_delay = False
+current_character = 0
 
 
 def output(string_output, new_line=True):
     """Output a string of text to the console.
 
-    The string will be typed out character-by-character, with an optional delay between the characters and the
-    words. The function will also keep text to the character limit on each line.
+    The string will be typed out character-by-character, with an optional
+    delay between the characters and the words. The function will also keep
+    text to the character limit on each line.
     """
-    character_limit = shutil.get_terminal_size()[0]   # The character limit on each line of the console.
+    character_limit = shutil.get_terminal_size()[0]
     global current_character
     words = str(string_output).split(' ')
     for word in words:

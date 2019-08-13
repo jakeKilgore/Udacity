@@ -7,7 +7,8 @@ class Interactable:
 
     Attributes:
         description (str): A text description of the object.
-        actions (dict[str,lambda]): A dictionary of action names to their associated functions.
+        actions (dict[str,lambda]): A dictionary of action names to their
+            associated functions.
     """
     def __init__(self, description, actions=None):
         """Constructor for the Interactable class."""
@@ -18,6 +19,6 @@ class Interactable:
 
     def look(self):
         """Display the object's description."""
-        assert (self.description is not None), "This object has no description."
+        assert (self.description is not None), f"{self} has no description."
         console.output(self.description)
         return False

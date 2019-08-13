@@ -4,11 +4,12 @@ import classes.console as console
 
 
 class OutsideDoors(Interactable):
-    """Class for handling the door blocking passage into the tomb in the first scene.
+    """Class for handling the door into the tomb in the first scene.
 
-    The door will serve as a tutorial for the command structure for the rest of the game. It has two actions associated
-    with it: enter and open. Enter will move the player to the next scene, but it will not work until the player has
-    used the Open command.
+    The door will serve as a tutorial for the command structure for the rest
+    of the game. It has two actions associated with it: enter and open.
+    Enter will move the player to the next scene, but it will not work until
+    the player has used the Open command.
 
     Attributes:
         is_open (bool): Whether the doors are open or closed.
@@ -18,7 +19,8 @@ class OutsideDoors(Interactable):
         """Constructor for the Door class."""
         super().__init__(
             description="A set of heavy, stone doors.",
-            actions={'open': lambda: self.open(), 'enter': lambda: self.enter()},
+            actions={'open': lambda: self.open(),
+                     'enter': lambda: self.enter()},
         )
         self.is_open = False
 
@@ -28,7 +30,8 @@ class OutsideDoors(Interactable):
             console.output("The doors are already open.")
             return False
         self.is_open = True
-        console.output("The heavy doors grind against the ground as you push them open.")
+        console.output("The heavy doors grind against the ground "
+                       "as you push them open.")
         return False
 
     def enter(self):
