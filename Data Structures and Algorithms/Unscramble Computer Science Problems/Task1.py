@@ -30,9 +30,6 @@ def count_unique_numbers():
     Search through the list of calls and texts, keeping a set of visited numbers and counting each time a number is
     added to the set.
 
-    Time complexity: O(n)
-    Space complexity: O(n)
-
     :return: The number of unique numbers in the data sets.
     """
     numbers = set()

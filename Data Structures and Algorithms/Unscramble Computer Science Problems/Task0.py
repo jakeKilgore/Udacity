@@ -26,11 +26,7 @@ Print messages:
 
 
 def main():
-    """Output data about the first text and last call to the console.
-
-    Time complexity: O(1).
-    Space complexity: O(1).
-    """
+    """Output data about the first text and last call to the console."""
     sender, recipient, time = texts[0]
     print(f"First record of texts, {sender} texts {recipient} at time {time}.")
 
