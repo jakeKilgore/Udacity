@@ -27,16 +27,34 @@ The list of numbers should be print out one per line in lexicographic order with
 
 
 def is_telemarketer(caller, call_recipients, texters, text_recipients):
+    """Check whether a number is a potential telemarketer.
+
+    :param caller: The phone number in question.
+    :param call_recipients: A set of all numbers that have received calls.
+    :param texters: A set of all numbers that have sent texts.
+    :param text_recipients: A set of all numbers that have received texts.
+    :return: True if the number is a potential telemarketer, else false.
+    """
     return caller not in call_recipients and caller not in texters and caller not in text_recipients
 
 
 def format_for_output(telemarketers):
+    """Format the set of potential telemarketers as a string of numbers, sorted lexicographically, and separated by
+    newline characters.
+
+    :param telemarketers: A set of potential telemarketers.
+    :return: A string representing the set of telemarketers.
+    """
     telemarketers = list(telemarketers)
     telemarketers.sort()
     return '\n'.join(telemarketers)
 
 
 def main():
+    """Identify a list of numbers of potential telemarketers.
+
+    Potential telemarketers are classified as numbers that make calls, but do not receive calls or send/receive texts.
+    """
     callers = set()
     call_recipients = set()
     texters = set()

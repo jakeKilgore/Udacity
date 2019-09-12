@@ -46,10 +46,20 @@ The percentage should have 2 decimal digits
 
 
 def from_bangalore(number):
+    """Check whether a number has a Bangalore area code.
+
+    :param number: The phone number to check.
+    :return: True if the number is from Bangalore, else false.
+    """
     return number[0:5] == '(080)'
 
 
 def add_area_code(area_codes, number):
+    """Add a phone number's area code to the set of area codes.
+
+    :param area_codes: A set of all area codes seen so far.
+    :param number: The current phone number.
+    """
     if number[0] == '(':
         area_codes.add(number[1:number.find(')')])
     if number[0:4] == '140':
@@ -59,12 +69,20 @@ def add_area_code(area_codes, number):
 
 
 def format_for_output(area_codes):
+    """Format the area codes set as a string, sorted lexicographically and separated by new line characters.
+
+    :param area_codes: The set of unique area codes.
+    :return: A string representing the area codes set.
+    """
     area_codes = list(area_codes)
     area_codes.sort()
     return '\n'.join(area_codes)
 
 
 def main():
+    """Search the calls from Bangalore phone numbers and output the area codes called and the percentage of calls
+    to other numbers in Bangalore.
+    """
     calls_from_bangalore = 0
     calls_to_bangalore = 0
     area_codes = set()
