@@ -74,9 +74,7 @@ def format_for_output(area_codes):
     :param area_codes: The set of unique area codes.
     :return: A string representing the area codes set.
     """
-    area_codes = list(area_codes)
-    area_codes.sort()
-    return '\n'.join(area_codes)
+    return '\n'.join(sorted(area_codes))
 
 
 def main():

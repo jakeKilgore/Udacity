@@ -45,9 +45,7 @@ def format_for_output(telemarketers):
     :param telemarketers: A set of potential telemarketers.
     :return: A string representing the set of telemarketers.
     """
-    telemarketers = list(telemarketers)
-    telemarketers.sort()
-    return '\n'.join(telemarketers)
+    return '\n'.join(sorted(telemarketers))
 
 
 def main():
