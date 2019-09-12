@@ -1,0 +1,56 @@
+In this analysis, I am ignoring the reading of the files, specifically:
+__________________________
+with open(file, 'r') as f:
+	reader = csv.reader(f)
+	texts = list(reader)
+__________________________
+This code is at the top of each file and has a time and space complexity of O(n).
+The reason I'm ignoring it is because that code could be run outside of the context of the tasks
+and passed into to these algorithms, resulting in the stated time complexity.
+
+c = size of call records
+t = size of text records
+
+Task 0:
+Time complexity: O(1) 
+Space complexity: O(1)
+This program takes a list of call records and a list of text records and looks at one specific index
+from each, resulting in a constant time and space complexity. Because of O(1) index lookup in 
+arrays, there will be no additional complexity.
+
+Task 1:
+Time complexity: O(c + t)
+Space complexity: O(c + t)
+This program searches through the call records and text records separately in a for loop,
+adding each number to a set if it doesn't already exist in the set. In the worst case,
+where all numbers are unique, it will end up looking through each call/text record once,
+adding two numbers to the set for each record. Because of the O(1) lookup in sets, checking if 
+a number is already in the set does not add complexity.
+
+Task 2:
+Time complexity: O(c)
+Space complexity: O(c)
+This program searches through all of the call records, keeping a dictionary of phone numbers 
+to time spent on the phone. In the worst case, where all numbers are unique, it will look 
+at every call record, adding two numbers to the dictionary for each record. Because of O(1) 
+lookup for dictionary keys, adding elements to the dictionary and updating existing elements 
+adds no additional complexity.
+
+Task 3:
+Time complexity: O(clog(c))
+Space complexity: O(c)
+This program searches through all call records, keeping a set of area codes called by phone 
+numbers from Bangalore. At the end of the algorithm, the set is duplicated into a list and then 
+sorted. This is where the clog(c) time complexity comes from. In the worst case, where all calls 
+are from from Bangalore and to unique area codes, the sorting of the list will take clog(c) time.
+This does not add an additional order of space complexity, however.
+
+Task 4:
+Time complexity: O(clog(c) + t)
+Space complexity: O(c + t)
+This program constructs a set of all phone numbers which send calls but do not receive calls or 
+send/receive texts. To do this, it searches through all call and text records, keeping a set of 
+all senders and receivers. It then goes through the set of all call senders and, if they are not 
+in any of the other sets, it will add them to the set of potential telemarketers. 
+At the end of the algorithm, the set of telemarketers is converted into a list and sorted for output 
+to the console, which is where the additional order of time complexity(O(clog(c)) comes from. 
