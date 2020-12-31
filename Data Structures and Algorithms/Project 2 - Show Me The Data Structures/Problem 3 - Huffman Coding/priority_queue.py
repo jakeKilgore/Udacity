@@ -6,6 +6,9 @@ class Priority_Queue:
     def __repr__(self):
         return str(self.heap)
 
+    def __len__(self):
+        return len(self.heap)
+
     def get_left_child_index(self, parent_index):
         return int(2 * parent_index + 1)
 

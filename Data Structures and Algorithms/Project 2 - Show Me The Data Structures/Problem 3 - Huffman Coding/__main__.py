@@ -20,7 +20,49 @@ def main():
     print(f"The content of the encoded data is: {decoded_data}")
 
 def huffman_encoding(data):
-    return None, None
+    frequency_table = symbol_frequency(data)
+    tree = build_huffman_tree(frequency_table)
+    encoded_data = encode_data(data, tree)
+
+    return encoded_data, tree
+
+def symbol_frequency(data):
+    frequency = {}
+    for symbol in data:
+        if symbol in data:
+            frequency[symbol] += 1
+        else:
+            frequency[symbol] = 0
+    return frequency
+
+def build_huffman_tree(frequency_table):
+    priority_queue = Priority_Queue()
+    for symbol in frequency_table:
+        priority_queue.insert(Node(frequency_table[symbol], symbol=symbol))
+
+    while len(priority_queue) > 1:
+        left_child = priority_queue.pull()
+        right_child = priority_queue.pull()
+        combined_priority = left_child.priority + right_child.priority
+        priority_queue.insert(Node(combined_priority, left_child=left_child, right_child=right_child))
+    return priority_queue.pull()
+
+def encode_data(data, tree):
+    encode_table = {}
+    for symbol, code in end_nodes(tree):
+        encode_table[symbol] = code
+    return data
+
+def end_nodes(tree):
+    queue = [(tree, '')]
+    while len(queue) > 0:
+        node, code = queue.pop()
+        if node.left_child is None and node.right_child is None:
+            yield node.symbol, code
+        if node.left_child is not None:
+            queue.append((node.left_child, code + '0'))
+        if node.right_child is not None:
+            queue.append((node.right_child, code + '1'))
 
 def huffman_decoding(data, tree):
     return None, None
@@ -61,19 +103,21 @@ if __name__ == "__main__":
 
 class Node:
 
-    def __init__(self, priority, value=None):
+    def __init__(self, priority, symbol=None, left_child=None, right_child=None):
         self.priority = priority
-        self.value = value
+        self.symbol = symbol
+        self.left_child = left_child
+        self.right_child = right_child
 
     def __eq__(self, other):
-        return (self.priority == other.priority) and (self.value == other.value)
+        return (self.priority == other.priority) and (self.symbol == other.value)
 
     def __ne__(self, other):
         return not (self == other)
 
     def __lt__(self, other):
         if self.priority == other.priority:
-            return self.value < other.value
+            return self.symbol < other.value
         else:
             return self.priority < other.priority
 
@@ -87,6 +131,6 @@ class Node:
         return not (self < other)
 
     def __repr__(self):
-        if self.value is None:
+        if self.symbol is None:
             return f"({self.priority})"
-        return f"({self.value}: {self.priority})"
+        return f"({self.symbol}: {self.priority})"
