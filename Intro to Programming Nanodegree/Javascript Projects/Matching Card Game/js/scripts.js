@@ -5,7 +5,7 @@ $(document).ready(function() {
         $deck = $('.cards'),
         $moves = $('.moves'),
         $refresh = $('.refresh');
-    
+
     let
         moves = 0;
 
@@ -26,11 +26,11 @@ $(document).ready(function() {
         moves = 0;
         updateScore();
     });
-   
+
     $deck.on('click', '.card', function() {
         makeMove(this);
     });
-   
+
     $(window).resize(function() {
         resizeGameBoard();
     });
