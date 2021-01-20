@@ -2,19 +2,17 @@ import sys
 from priority_queue import Priority_Queue
 
 def main():
-    codes = {}
-
     a_great_sentence = "The bird is the word"
 
     print(f"The size of the data is: {sys.getsizeof(a_great_sentence)}")
     print(f"The content of the data is: {a_great_sentence}")
 
-    encoded_data, tree = huffman_encoding(a_great_sentence)
+    encoded_data, decode_table = huffman_encoding(a_great_sentence)
 
     print(f"The size of the encoded data is: {sys.getsizeof(int(encoded_data, base=2))}")
     print(f"The content of the encoded data is: {encoded_data}")
 
-    decoded_data = huffman_decoding(encoded_data, tree)
+    decoded_data = huffman_decoding(encoded_data, decode_table)
 
     print(f"The size of the decoded data is: {sys.getsizeof(decoded_data)}")
     print(f"The content of the encoded data is: {decoded_data}")
@@ -22,14 +20,13 @@ def main():
 def huffman_encoding(data):
     frequency_table = symbol_frequency(data)
     tree = build_huffman_tree(frequency_table)
-    encoded_data = encode_data(data, tree)
-
-    return encoded_data, tree
+    encoded_data, decode_table = encode_data(data, tree)
+    return encoded_data, decode_table
 
 def symbol_frequency(data):
     frequency = {}
     for symbol in data:
-        if symbol in data:
+        if symbol in frequency:
             frequency[symbol] += 1
         else:
             frequency[symbol] = 0
@@ -49,9 +46,10 @@ def build_huffman_tree(frequency_table):
 
 def encode_data(data, tree):
     encode_table = {}
+    print(end_nodes(tree))
     for symbol, code in end_nodes(tree):
         encode_table[symbol] = code
-    return data
+    return data, encode_table
 
 def end_nodes(tree):
     queue = [(tree, '')]
