@@ -1,5 +1,6 @@
 import sys
 from priority_queue import Priority_Queue
+from node import Node
 
 def main():
     a_great_sentence = "The bird is the word"
@@ -8,6 +9,8 @@ def main():
     print(f"The content of the data is: {a_great_sentence}")
 
     encoded_data, decode_table = huffman_encoding(a_great_sentence)
+
+    exit()
 
     print(f"The size of the encoded data is: {sys.getsizeof(int(encoded_data, base=2))}")
     print(f"The content of the encoded data is: {encoded_data}")
@@ -35,13 +38,13 @@ def symbol_frequency(data):
 def build_huffman_tree(frequency_table):
     priority_queue = Priority_Queue()
     for symbol in frequency_table:
-        priority_queue.insert(Node(frequency_table[symbol], symbol=symbol))
+        priority_queue.insert(Node(priority=frequency_table[symbol], symbol=symbol))
 
     while len(priority_queue) > 1:
         left_child = priority_queue.pull()
         right_child = priority_queue.pull()
         combined_priority = left_child.priority + right_child.priority
-        priority_queue.insert(Node(combined_priority, left_child=left_child, right_child=right_child))
+        priority_queue.insert(Node(priority=combined_priority, left_child=left_child, right_child=right_child))
     return priority_queue.pull()
 
 def encode_data(data, tree):
@@ -97,38 +100,3 @@ def test_priority_queue():
 
 if __name__ == "__main__":
     main()
-
-
-class Node:
-
-    def __init__(self, priority, symbol=None, left_child=None, right_child=None):
-        self.priority = priority
-        self.symbol = symbol
-        self.left_child = left_child
-        self.right_child = right_child
-
-    def __eq__(self, other):
-        return (self.priority == other.priority) and (self.symbol == other.value)
-
-    def __ne__(self, other):
-        return not (self == other)
-
-    def __lt__(self, other):
-        if self.priority == other.priority:
-            return self.symbol < other.value
-        else:
-            return self.priority < other.priority
-
-    def __le__(self, other):
-        return (self < other) or (self == other)
-
-    def __gt__(self, other):
-        return not (self <= other)
-
-    def __ge__(self, other):
-        return not (self < other)
-
-    def __repr__(self):
-        if self.symbol is None:
-            return f"({self.priority})"
-        return f"({self.symbol}: {self.priority})"
