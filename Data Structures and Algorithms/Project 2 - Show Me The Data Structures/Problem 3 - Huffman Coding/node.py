@@ -14,6 +14,10 @@ class Node:
 
     def __lt__(self, other):
         if self.priority == other.priority:
+            if self.symbol is None:
+                return True
+            if other.symbol is None:
+                return False
             return self.symbol < other.symbol
         else:
             return self.priority < other.priority
