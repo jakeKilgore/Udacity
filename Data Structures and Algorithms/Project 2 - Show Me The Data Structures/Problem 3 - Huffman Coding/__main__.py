@@ -10,8 +10,6 @@ def main():
 
     encoded_data, decode_table = huffman_encoding(a_great_sentence)
 
-    exit()
-
     print(f"The size of the encoded data is: {sys.getsizeof(int(encoded_data, base=2))}")
     print(f"The content of the encoded data is: {encoded_data}")
 
@@ -27,13 +25,13 @@ def huffman_encoding(data):
     return encoded_data, decode_table
 
 def symbol_frequency(data):
-    frequency = {}
+    frequency_table = {}
     for symbol in data:
-        if symbol in frequency:
-            frequency[symbol] += 1
+        if symbol in frequency_table:
+            frequency_table[symbol] += 1
         else:
-            frequency[symbol] = 0
-    return frequency
+            frequency_table[symbol] = 1
+    return frequency_table
 
 def build_huffman_tree(frequency_table):
     priority_queue = Priority_Queue()
@@ -49,7 +47,6 @@ def build_huffman_tree(frequency_table):
 
 def encode_data(data, tree):
     encode_table = {}
-    print(end_nodes(tree))
     for symbol, code in end_nodes(tree):
         encode_table[symbol] = code
     return data, encode_table
