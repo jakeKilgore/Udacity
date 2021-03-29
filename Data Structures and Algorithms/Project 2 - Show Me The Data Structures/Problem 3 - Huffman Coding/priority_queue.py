@@ -38,7 +38,11 @@ class Priority_Queue:
     def pull(self):
         assert len(self.heap) != 0, "Trying to fetch min from empty queue."
         min_node = self.heap[0]
-        self.heap[0] = self.heap.pop()
+        swap_node = self.heap.pop()
+        if len(self.heap) == 0:
+            self.heap.append(swap_node)
+        else:    
+            self.heap[0] = swap_node
         self.heapify_down(0)
         return min_node
 
