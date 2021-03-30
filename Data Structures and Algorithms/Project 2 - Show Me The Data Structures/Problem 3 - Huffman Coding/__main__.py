@@ -77,35 +77,6 @@ def extract_symbols(encoded_data, decode_table):
             yield decode_table[current_symbol]
             current_symbol = ''
 
-def test_priority_queue():
-    priority_queue = Priority_Queue()
-    priority_queue.insert(10)
-    assert priority_queue.heap == [10]
-    priority_queue.insert(4)
-    assert priority_queue.heap == [4, 10]
-    priority_queue.insert(15)
-    assert priority_queue.heap == [4, 10, 15]
-    priority_queue.pull()
-    assert priority_queue.heap == [10, 15]
-    priority_queue.insert(20)
-    assert priority_queue.heap == [10, 15, 20]
-    priority_queue.insert(0)
-    assert priority_queue.heap == [0, 10, 20, 15]
-    priority_queue.insert(30)
-    assert priority_queue.heap == [0, 10, 20, 15, 30]
-    priority_queue.pull()
-    assert priority_queue.heap == [10, 15, 20, 30]
-    priority_queue.pull()
-    assert priority_queue.heap == [15, 30, 20]
-    priority_queue.insert(2)
-    assert priority_queue.heap == [2, 15, 20, 30]
-    priority_queue.insert(4)
-    assert priority_queue.heap == [2, 4, 20, 30, 15]
-    priority_queue.insert(-1)
-    assert priority_queue.heap == [-1, 4, 2, 30, 15, 20]
-    priority_queue.insert(-3)
-    assert priority_queue.heap == [-3, 4, -1, 30, 15, 20, 2]
-
 
 if __name__ == "__main__":
     main()
