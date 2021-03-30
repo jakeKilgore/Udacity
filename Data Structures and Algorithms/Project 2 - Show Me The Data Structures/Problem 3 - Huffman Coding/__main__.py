@@ -4,7 +4,6 @@ from node import Node
 
 def main():
     a_great_sentence = "The bird is the word"
-
     print(f"The size of the data is: {sys.getsizeof(a_great_sentence)}")
     print(f"The content of the data is: {a_great_sentence}")
 
@@ -47,9 +46,14 @@ def build_huffman_tree(frequency_table):
 
 def encode_data(data, tree):
     encode_table = {}
+    decode_table = {}
+    encoded_data = ''
     for symbol, code in end_nodes(tree):
         encode_table[symbol] = code
-    return data, encode_table
+        decode_table[code] = symbol
+    for symbol in data:
+        encoded_data += encode_table[symbol]
+    return encoded_data, decode_table
 
 def end_nodes(tree):
     queue = [(tree, '')]
@@ -60,10 +64,18 @@ def end_nodes(tree):
         if node.left_child is not None:
             queue.append((node.left_child, code + '0'))
         if node.right_child is not None:
-            queue.append((node.right_child, code + '1'))
+            queue.append((node.right_child, code +'1'))
 
-def huffman_decoding(data, tree):
-    return None, None
+def huffman_decoding(encoded_data, decode_table):
+    return ''.join((symbol) for symbol in extract_symbols(encoded_data, decode_table))
+
+def extract_symbols(encoded_data, decode_table):
+    current_symbol = ''
+    for bit in encoded_data:
+        current_symbol += bit
+        if current_symbol in decode_table:
+            yield decode_table[current_symbol]
+            current_symbol = ''
 
 def test_priority_queue():
     priority_queue = Priority_Queue()
