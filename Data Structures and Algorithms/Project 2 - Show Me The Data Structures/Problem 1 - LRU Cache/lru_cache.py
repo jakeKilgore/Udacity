@@ -2,33 +2,34 @@ from queue import Queue
 
 class LRU_Cache:
 
-    def __init__(self, capacity):
-        self.capacity = capacity
-        self.size = 0
-        self._cache = dict()
-        self._nodes = dict()
+    def __init__(self: int, capacity: int):
+        self._capacity = capacity
+        self._size = 0
         self._queue = Queue()
+        self._cache = dict()
 
-    def __str__(self):
-        return "{" + str(", ".join([f"{key}: {self._cache[key]}" for key in self._cache]) + "}")
+    def __str__(self) -> str:
 
-    def set(self, key, value):
+        return "{" + str(", ".join([f"{key}: {self._cache[key].value}" for key in self._cache]) + "}")
+
+    def set(self, key: Any, value: Any):
         if key in self._cache:
-            self._nodes[key] = self._queue.requeue(self._nodes[key])
-            self._cache[key] = value
+            self._cache[key] = self._queue.requeue(self._cache[key])
+            self._cache[key].value = value
             return
 
-        if self.size == self.capacity:
+        if self._size >= self._capacity:
             oldest = self._queue.dequeue()
             self._cache.pop(oldest)
         else:
-            self.size += 1
-        self._nodes[key] = self._queue.enqueue(key)
-        self._cache[key] = value
+            self._size += 1
+        self._cache[key] = self._queue.enqueue(key)
+        self._cache[key].value = value
 
-    def get(self, key):
+    def get(self, key: Any) -> Any:
+
         if key not in self._cache:
             return -1
 
-        self._nodes[key] = self._queue.requeue(self._nodes[key])
-        return self._cache[key]
+        self._cache[key] = self._queue.requeue(self._cache[key])
+        return self._cache[key].value
