@@ -1,5 +1,6 @@
 from __future__ import annotations
 from typing import Any
+from typing import Union
 
 class Queue:
     """A first-in-first-out queue represented as a doubly linked list.
@@ -37,7 +38,7 @@ class Queue:
         """Remove the tail from the queue.
 
         Returns:
-            Union[Node, None]: The value of the removed tail if the queue was not empty. Otherwise, None.
+            Node/None: The value of the removed tail if the queue was not empty. Otherwise, None.
         """
         if self.head is None:
             return None
@@ -74,8 +75,8 @@ class Node:
     
     Attributes:
         value (Any): The value of the node.
-        next (Union[Node, None]): The node before the current node in the linked list.
-        prev (Union[Node, None]): The node after the current node in the linked list.
+        next (Node): The node before the current node in the linked list.
+        prev (Node): The node after the current node in the linked list.
     """
 
     def __init__(self, value: Any):
