@@ -1,6 +1,11 @@
 from lru_cache import LRU_Cache
 
 def main():
+    """Test the LRU Cache.
+
+    Create an LRU Cache, populate it with values, and test all of the methods.
+    """
+
     our_cache = LRU_Cache(5)
 
     our_cache.set(1, 1)
@@ -16,6 +21,7 @@ def main():
     our_cache.set(6, 6)
 
     assert(our_cache.get(3) == -1)      # returns -1 because the cache reached it's capacity and 3 was the least recently used entry
+    print(our_cache)
 
 
 if __name__ == "__main__":

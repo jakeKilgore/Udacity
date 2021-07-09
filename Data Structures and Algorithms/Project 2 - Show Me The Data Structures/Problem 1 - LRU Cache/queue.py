@@ -1,10 +1,28 @@
+from __future__ import annotations
+from typing import Any
+
 class Queue:
+    """A first-in-first-out queue represented as a doubly linked list.
+
+    Attributes:
+        head (Node): The first element in the queue, next to be removed.
+        tail (Node): The last element in the queue, most recently added.
+    """
 
     def __init__(self):
+        """The constructor for the Queue class."""
         self.head = None
         self.tail = None
 
-    def enqueue(self, value):
+    def enqueue(self, value: Any) -> Node:
+        """Add an element onto the end of the queue.
+        
+        Parameters:
+            value (Any): The value to be added to the queue.
+
+        Returns:
+            Node: A node containing the given value at the end of the queue.
+        """
         cur = Node(value)
 
         if self.head is None:
@@ -15,7 +33,12 @@ class Queue:
         self.tail = cur
         return cur
 
-    def dequeue(self):
+    def dequeue(self) -> Union[Node, None]:
+        """Remove the tail from the queue.
+
+        Returns:
+            Union[Node, None]: The value of the removed tail if the queue was not empty. Otherwise, None.
+        """
         if self.head is None:
             return None
 
@@ -24,7 +47,15 @@ class Queue:
         self.head.prev = None
         return value
 
-    def requeue(self, node):
+    def requeue(self, node: Node) -> Node:
+        """Remove the given node from the queue and then add it again as the tail.
+
+        Parameters:
+            node (Node): The node to be requeued.
+
+        Returns:
+            Node: The node after being requeued.
+        """
         if node is self.head:
             self.head = node.next
         else:
@@ -39,8 +70,28 @@ class Queue:
 
 
 class Node:
+    """The nodes of the doubly linked list.
+    
+    Attributes:
+        value (Any): The value of the node.
+        next (Union[Node, None]): The node before the current node in the linked list.
+        prev (Union[Node, None]): The node after the current node in the linked list.
+    """
 
-    def __init__(self, value):
+    def __init__(self, value: Any):
+        """The constructor for the Node class.
+
+        Parameters:
+            value (Any): The value of the node.
+        """
         self.value = value
         self.next = None
         self.prev = None
+
+    def __str__(self) -> str:
+        """Represent the Node as a string.
+        
+        Returns:
+            str: A string representing the node.
+        """
+        return self.value
