@@ -1,3 +1,5 @@
+from __future__ import annotations
+
 class Node:
 
     def __init__(self, priority, symbol=None, left_child=None, right_child=None):
@@ -6,13 +8,13 @@ class Node:
         self.left_child = left_child
         self.right_child = right_child
 
-    def __eq__(self, other):
+    def __eq__(self, other: Node) -> bool:
         return (self.priority == other.priority) and (self.symbol == other.symbol)
 
-    def __ne__(self, other):
+    def __ne__(self, other: Node) -> bool:
         return not (self == other)
 
-    def __lt__(self, other):
+    def __lt__(self, other: Node) -> bool:
         if self.priority == other.priority:
             if self.symbol is None:
                 return True
@@ -22,13 +24,13 @@ class Node:
         else:
             return self.priority < other.priority
 
-    def __le__(self, other):
+    def __le__(self, other: Node) -> bool:
         return (self < other) or (self == other)
 
-    def __gt__(self, other):
+    def __gt__(self, other: Node) -> bool:
         return not (self <= other)
 
-    def __ge__(self, other):
+    def __ge__(self, other: Node) -> bool:
         return not (self < other)
 
     def __repr__(self):
