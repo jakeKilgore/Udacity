@@ -3,6 +3,13 @@ from priority_queue import Priority_Queue
 from node import Node
 
 def main():
+    """Test the Huffman Coding implementation.
+
+    Huffman Coding is a lossless data compression algorithm that assigns bitstrings to a symbol based on frequency,
+    therefore making it so that the most common symbols take up the least amount of space.
+    This implementation uses a priority queue to build the huffman tree for encoding as well as a dictionary for decoding.
+    """
+    
     a_great_sentence = "The bird is the word"
     print(f"The size of the data is: {sys.getsizeof(a_great_sentence)}")
     print(f"The content of the data is: {a_great_sentence}")
